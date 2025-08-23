@@ -197,7 +197,7 @@ export const DATA = {
     },
     {
       title: "Intermountain Health",
-      // href: "https://magicui.design",
+      href: "https://magicui.design",
       dates: "June 2023 - Present",
       active: true,
       description:
