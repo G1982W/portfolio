@@ -77,11 +77,11 @@ export const DATA = {
   work: [
     {
       company: "Costco",
-      href: "https://costco.com",
+      href: "",
       badges: [],
       location: "Remote",
       title: "Lead UX/UI Designer",
-      logoUrl: "/atomic.png",
+      logoUrl: "/Logos/Costco.png",
       start: "01/2023",
       end: "Present",
       description:
@@ -90,10 +90,10 @@ export const DATA = {
     {
       company: "Intermountain Health",
       badges: [],
-      href: "https://intermountainhealth.org",
+      href: "",
       location: "Remote",
       title: "Acting Lead Product Designer",
-      logoUrl: "/intermountain.png",
+      logoUrl: "/Logos/intermountain health.webp",
       start: "04/2024",
       end: "08/2025",
       description:
@@ -101,11 +101,11 @@ export const DATA = {
     },
     {
       company: "Bii Consulting",
-      href: "https://nvidia.com/",
+      href: "",
       badges: [],
       location: "Santa Clara, CA",
       title: "Lead UX/UI Designer",
-      logoUrl: "/nvidia.png",
+      logoUrl: "/Logos/bii consulting.jpg",
       start: "06/2024",
       end: "05/2025",
       description:
@@ -113,11 +113,11 @@ export const DATA = {
     },
     {
       company: "State of Washington",
-      href: "https://splunk.com",
+      href: "",
       badges: [],
       location: "San Jose, CA",
       title: "Mobile UX/UI Designer",
-      logoUrl: "/splunk.svg",
+      logoUrl: "/Logos/state of washington.svg",
       start: "08/2020",
       end: "01/2023",
       description:
@@ -125,11 +125,11 @@ export const DATA = {
     },
     {
       company: "Safe Home Security, Inc.",
-      href: "https://li.me/",
+      href: "",
       badges: [],
       location: "San Francisco, CA",
       title: "Creative Director",
-      logoUrl: "/lime.svg",
+      logoUrl: "/Logos/safe home security.png",
       start: "12/2017",
       end: "01/2020",
       description:
@@ -159,7 +159,7 @@ export const DATA = {
     },
     {
       school: "University of Utah",
-      href: "https://uwaterloo.ca",
+      href: "https://www.utah.edu",
       degree: "Bachelor of Fine Arts in Graphic Design",
       logoUrl: "/waterloo.png",
       start: "2003",
@@ -192,12 +192,13 @@ export const DATA = {
         },
       ],
       image: "",
+      images: [],
       video:
         "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
     },
     {
       title: "Intermountain Health",
-      href: "https://magicui.design",
+      href: "",
       dates: "June 2023 - Present",
       active: true,
       description:
@@ -214,22 +215,27 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Website",
-          href: "https://magicui.design",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
-          icon: <Icons.github className="size-3" />,
+          type: "Screen",
+          href: "Screen",
+          icon: <Icons.framermotion className="size-3" />,
         },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      images: [
+        "/Portfolio Links/Screens/Intermountain Health/jpg/1-Group 9.jpg",
+        "/Portfolio Links/Screens/Intermountain Health/jpg/2-Group 8.jpg",
+        "/Portfolio Links/Screens/Intermountain Health/jpg/3-Group 7.jpg",
+        "/Portfolio Links/Screens/Intermountain Health/jpg/4-Group 6.jpg",
+        "/Portfolio Links/Screens/Intermountain Health/jpg/5-Group 5.jpg",
+        "/Portfolio Links/Screens/Intermountain Health/jpg/6-Group 4.jpg",
+        "/Portfolio Links/Screens/Intermountain Health/jpg/7-Group 3.jpg",
+        "/Portfolio Links/Screens/Intermountain Health/jpg/8-Group 2.jpg",
+      ],
+      video: "",
     },
     {
       title: "blakebill",
-      href: "https://blakebill.com",
+      href: "blakebill.com",
       dates: "April 2023 - September 2023",
       active: true,
       description:
@@ -248,17 +254,23 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://llm.report",
+          href: "https://blakebill.com",
           icon: <Icons.globe className="size-3" />,
         },
-        {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
-          icon: <Icons.github className="size-3" />,
-        },
+        // {
+        //   type: "Screen",
+        //   href: "Screen",
+        //   icon: <Icons.framermotion className="size-3" />,
+        // },
+        // {
+        //   type: "Source",
+        //   href: "https://github.com/dillionverma/llm.report",
+        //   icon: <Icons.github className="size-3" />,
+        // },
       ],
       image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
+      images: [],
+      video: "/portfolio links/blakebill.mp4",
     },
     {
       title: "Carbon HRM",
@@ -284,10 +296,15 @@ export const DATA = {
           href: "https://carbonHRM.com",
           icon: <Icons.globe className="size-3" />,
         },
+        // {
+        //   type: "Screen",
+        //   href: "Screen",
+        //   icon: <Icons.framermotion className="size-3" />,
+        // },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      images: [],
+      video: "/portfolio links/CarbonHRM.mp4",
     },
     {
       title: "Costco",
@@ -309,14 +326,20 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Website",
-          href: "https://carbonHRM.com",
-          icon: <Icons.globe className="size-3" />,
+          type: "Screen",
+          href: "Screen",
+          icon: <Icons.framermotion className="size-3" />,
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      images: [
+        "/Portfolio Links/Screens/Costco/jpg/1_Advanced search page.jpg",
+        "/Portfolio Links/Screens/Costco/jpg/2_Navigate to an item page through advanced search and then back to advnaced search - 22.jpg",
+        "/Portfolio Links/Screens/Costco/jpg/3_Item Vendor.jpg",
+        "/Portfolio Links/Screens/Costco/jpg/4_Display results - search results table - 116.jpg",
+        "/Portfolio Links/Screens/Costco/jpg/5_Autocomplete.jpg",
+      ],
+      video: "",
     },
     {
       title: "Thatch",
@@ -338,14 +361,29 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Website",
-          href: "https://carbonHRM.com",
-          icon: <Icons.globe className="size-3" />,
+          type: "Screen",
+          href: "Screen",
+          icon: <Icons.framermotion className="size-3" />,
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      images: [
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/Add Product - Retailer View - Populated.jpg",
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Dashboard – 1.jpg",
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Inventory Allocation 03 – 2.jpg",
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Thatchat – 2.jpg",
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/History Detailed View Fullscreen.jpg",
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/History.jpg",
+        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/1_Login Screen.jpg",
+        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/2_Checkout Screen - Populated.jpg",
+        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/4_Sale Page Receipt.jpg",
+        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/5_Receive IA.jpg",
+        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/6_Work Orders - Populated – 1.jpg",
+        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/7_Inventory Allocated Detailed VIEW - Purchase Order – 2.jpg",
+        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/Inventory Allocated Detailed VIEW - Purchase Order-Shipped - Confirm Payment.jpg",
+        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/Split Pay.jpg",
+      ],
+      video: "",
     },
     {
       title: "Orizn Energy",
@@ -368,13 +406,13 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://carbonHRM.com",
+          href: "https://OrizonEnergy.ca",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      images: [],
+      video: "/portfolio links/OrizonEnergy.mp4",
     },
     {
       title: "Kept by Safe Home Security",
@@ -397,17 +435,32 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://carbonHRM.com",
+          href: "https://KeptDIY.com",
           icon: <Icons.globe className="size-3" />,
         },
+        // {
+        //   type: "Screen",
+        //   href: "Screen",
+        //   icon: <Icons.framermotion className="size-3" />,
+        // },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      images: [
+        // "/Portfolio Links/Screens/Kept UI/jpg/1-Home – 1.jpg",
+        // "/Portfolio Links/Screens/Kept UI/jpg/2-Home Open – 2.jpg",
+        // "/Portfolio Links/Screens/Kept UI/jpg/3-Rooms open – 1.jpg",
+        // "/Portfolio Links/Screens/Kept UI/jpg/4-Groups – Open – 2.jpg",
+        // "/Portfolio Links/Screens/Kept UI/jpg/5-No Select wireless – 1.jpg",
+        // "/Portfolio Links/Screens/Kept UI/jpg/6-Password – 1.jpg",
+        // "/Portfolio Links/Screens/Kept UI/jpg/7-Join Wireless – 1.jpg",
+        // "/Portfolio Links/Screens/Kept UI/jpg/8-Events – 1.jpg",
+        // "/Portfolio Links/Screens/Kept UI/jpg/9-Motion – 1.jpg",
+      ],
+      video: "/portfolio links/KeptDIY.mp4",
     },
     {
       title: "Lightfusion",
-      href: "lightfusion.io",
+      href: "https://lightfusion.io",
       dates: "April 2023 - March 2024",
       active: true,
       description:
@@ -426,13 +479,13 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://carbonHRM.com",
+          href: "https://lightfusion.io",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      images: [],
+      video: "/portfolio links/Lightfusion.mp4",
     },
     {
       title: "Callpilot",
@@ -455,13 +508,42 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://carbonHRM.com",
+          href: "https://Callpilot.app",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      images: [],
+      video: "/portfolio links/Callpilot.mp4",
+    },
+    {
+      title: "Core365",
+      href: "Callpilot.app",
+      dates: "April 2023 - March 2024",
+      active: true,
+      description:
+        "Designed & developed the site of Core365, an AI-powered, all-in-one ERP that unifies your sales stack.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "PostgreSQL",
+        "Prisma",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Magic UI",
+        "Stripe",
+        "Cloudflare Workers",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://core365.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      images: [],
+      video: "/portfolio links/Core365.mp4",
     },
   ],
   hackathons: [

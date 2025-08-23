@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -10,6 +12,9 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { ImageSlideshow } from "@/components/image-slideshow";
+import { Modal } from "@/components/ui/modal";
+import { useState } from "react";
 
 interface Props {
   title: string;
@@ -19,26 +24,32 @@ interface Props {
   tags: readonly string[];
   link?: string;
   image?: string;
+  images?: readonly string[];
   video?: string;
-  links?: readonly {
-    icon: React.ReactNode;
-    type: string;
-    href: string;
-  }[];
+  links?:
+    | readonly {
+        icon: React.ReactNode;
+        type: string;
+        href: string;
+      }[]
+    | undefined;
   className?: string;
+  onScreenClick?: (images: readonly string[], title: string) => void;
 }
 
 export function ProjectCard({
   title,
-  href,
+  // href,
   description,
   dates,
   tags,
   link,
   image,
+  images,
   video,
   links,
   className,
+  onScreenClick,
 }: Props) {
   return (
     <Card
@@ -46,10 +57,7 @@ export function ProjectCard({
         "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
       }
     >
-      <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
-      >
+      <div className={cn("block cursor-pointer")}>
         {video && (
           <video
             src={video}
@@ -60,16 +68,28 @@ export function ProjectCard({
             className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
           />
         )}
-        {image && (
-          <Image
-            src={image}
+        {images && images.length > 0 ? (
+          <ImageSlideshow
+            images={images}
             alt={title}
             width={500}
             height={300}
             className="h-40 w-full overflow-hidden object-cover object-top"
+            autoPlay={true}
+            interval={4000}
           />
+        ) : (
+          image && (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-40 w-full overflow-hidden object-cover object-top"
+            />
+          )
         )}
-      </Link>
+      </div>
       <CardHeader className="px-2">
         <div className="space-y-1">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>
@@ -100,14 +120,44 @@ export function ProjectCard({
       <CardFooter className="px-2 pb-2">
         {links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
-            {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
-                  {link.icon}
-                  {link.type}
-                </Badge>
-              </Link>
-            ))}
+            {links?.map((link, idx) => {
+              if (link.type === "Screen" && images && images.length > 0) {
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => onScreenClick?.(images, title)}
+                    className="flex gap-2 px-2 py-1 text-[10px] bg-secondary hover:bg-secondary/80 rounded-md transition-colors"
+                  >
+                    {link.icon}
+                    {link.type}
+                  </button>
+                );
+              }
+
+              if (link.type === "Website") {
+                return (
+                  <Link href={link?.href} key={idx} target="_blank">
+                    <Badge
+                      key={idx}
+                      className="flex gap-2 px-2 py-1 text-[10px]"
+                    >
+                      {link.icon}
+                      {link.type}
+                    </Badge>
+                  </Link>
+                );
+              }
+
+              // Handle other link types (like Source, etc.)
+              return (
+                <Link href={link?.href} key={idx} target="_blank">
+                  <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
+                    {link.icon}
+                    {link.type}
+                  </Badge>
+                </Link>
+              );
+            })}
           </div>
         )}
       </CardFooter>
