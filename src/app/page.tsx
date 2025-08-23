@@ -137,7 +137,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
               >
                 <ProjectCard
-                  href={project.href}
+                  href={project.href || undefined}
                   key={project.title}
                   title={project.title}
                   description={project.description}
