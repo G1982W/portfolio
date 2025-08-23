@@ -129,7 +129,8 @@ export const DATA = {
       badges: [],
       location: "San Francisco, CA",
       title: "Creative Director",
-      logoUrl: "/Logos/safe home security.png",
+      logoUrl:
+        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/Safe%20home%20security.png",
       start: "12/2017",
       end: "01/2020",
       description:
