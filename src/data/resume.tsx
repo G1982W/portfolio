@@ -270,7 +270,8 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video: "/portfolio links/blakebill.mp4",
+      video:
+        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/blakebill.mp4",
     },
     {
       title: "Carbon HRM",
@@ -304,7 +305,8 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video: "/portfolio links/CarbonHRM.mp4",
+      video:
+        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/CarbonHRM.mp4",
     },
     {
       title: "Costco",
@@ -412,7 +414,8 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video: "/portfolio links/OrizonEnergy.mp4",
+      video:
+        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/OrizonEnergy.mp4",
     },
     {
       title: "Kept by Safe Home Security",
@@ -456,7 +459,8 @@ export const DATA = {
         // "/Portfolio Links/Screens/Kept UI/jpg/8-Events – 1.jpg",
         // "/Portfolio Links/Screens/Kept UI/jpg/9-Motion – 1.jpg",
       ],
-      video: "/portfolio links/KeptDIY.mp4",
+      video:
+        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/KeptDIY.mp4",
     },
     {
       title: "Lightfusion",
@@ -485,7 +489,8 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video: "/portfolio links/Lightfusion.mp4",
+      video:
+        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/LightFusion.mp4",
     },
     {
       title: "Callpilot",
@@ -514,7 +519,8 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video: "/portfolio links/Callpilot.mp4",
+      video:
+        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/Callpilot.mp4",
     },
     {
       title: "Core365",
@@ -543,7 +549,8 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video: "/portfolio links/Core365.mp4",
+      video:
+        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/Core365.mp4",
     },
   ],
   hackathons: [
