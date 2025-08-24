@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge, badgeVariants } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -68,7 +68,7 @@ export function ProjectCard({
             className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
           />
         )}
-        {images && images.length > 0 ? (
+        {images && images.length > 0 && !video ? (
           <ImageSlideshow
             images={images}
             alt={title}
@@ -123,14 +123,14 @@ export function ProjectCard({
             {links?.map((link, idx) => {
               if (link.type === "Screen" && images && images.length > 0) {
                 return (
-                  <button
+                  <div
                     key={idx}
                     onClick={() => onScreenClick?.(images, title)}
-                    className="flex gap-2 px-2 py-1 text-[10px] bg-secondary hover:bg-secondary/80 rounded-md transition-colors"
+                    className="items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px] cursor-pointer"
                   >
                     {link.icon}
                     {link.type}
-                  </button>
+                  </div>
                 );
               }
 
@@ -150,12 +150,17 @@ export function ProjectCard({
 
               // Handle other link types (like Source, etc.)
               return (
-                <Link href={link?.href} key={idx} target="_blank">
-                  <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
-                    {link.icon}
-                    {link.type}
-                  </Badge>
-                </Link>
+                <>
+                  <Link href={link.href} key={idx} target="_blank">
+                    <Badge
+                      key={idx}
+                      className="flex gap-2 px-2 py-1 text-[10px]"
+                    >
+                      {link.icon}
+                      {link.type}
+                    </Badge>
+                  </Link>
+                </>
               );
             })}
           </div>

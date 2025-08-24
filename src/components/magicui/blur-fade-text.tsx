@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useMemo } from "react";
+import { ModeToggle } from "../mode-toggle";
 
 interface BlurFadeTextProps {
   text: string;
@@ -78,6 +79,7 @@ const BlurFadeText = ({
           {text}
         </motion.span>
       </AnimatePresence>
+      {/* <ModeToggle /> */}
     </div>
   );
 };

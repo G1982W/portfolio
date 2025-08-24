@@ -94,7 +94,7 @@ const StyledWrapper = styled.div`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: var(--toggle-size);
+    font-size: 1.4rem;
   }
 
   .theme-switch__container {

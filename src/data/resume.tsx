@@ -170,7 +170,7 @@ export const DATA = {
   projects: [
     {
       title: "AskBlake",
-      href: "https://askblake.com",
+      href: "https://www.askblake.dev",
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
@@ -188,7 +188,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://askblake.com",
+          href: "https://www.askblake.dev",
           icon: <Icons.globe className="size-3" />,
         },
       ],
@@ -298,14 +298,21 @@ export const DATA = {
           href: "https://carbonHRM.com",
           icon: <Icons.globe className="size-3" />,
         },
-        // {
-        //   type: "Screen",
-        //   href: "Screen",
-        //   icon: <Icons.framermotion className="size-3" />,
-        // },
+        {
+          type: "Screen",
+          href: "Screen",
+          icon: <Icons.framermotion className="size-3" />,
+        },
       ],
       image: "",
-      images: [],
+      images: [
+        "/Portfolio Links/Screens/CarbonHRM/1.png",
+        "/Portfolio Links/Screens/CarbonHRM/2.png",
+        "/Portfolio Links/Screens/CarbonHRM/3.png",
+        "/Portfolio Links/Screens/CarbonHRM/4.png",
+        "/Portfolio Links/Screens/CarbonHRM/5.png",
+        "/Portfolio Links/Screens/CarbonHRM/6.png",
+      ],
       video:
         "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/CarbonHRM.mp4",
     },
@@ -442,23 +449,23 @@ export const DATA = {
           href: "https://KeptDIY.com",
           icon: <Icons.globe className="size-3" />,
         },
-        // {
-        //   type: "Screen",
-        //   href: "Screen",
-        //   icon: <Icons.framermotion className="size-3" />,
-        // },
+        {
+          type: "Screen",
+          href: "Screen",
+          icon: <Icons.framermotion className="size-3" />,
+        },
       ],
       image: "",
       images: [
-        // "/Portfolio Links/Screens/Kept UI/jpg/1-Home – 1.jpg",
-        // "/Portfolio Links/Screens/Kept UI/jpg/2-Home Open – 2.jpg",
-        // "/Portfolio Links/Screens/Kept UI/jpg/3-Rooms open – 1.jpg",
-        // "/Portfolio Links/Screens/Kept UI/jpg/4-Groups – Open – 2.jpg",
-        // "/Portfolio Links/Screens/Kept UI/jpg/5-No Select wireless – 1.jpg",
-        // "/Portfolio Links/Screens/Kept UI/jpg/6-Password – 1.jpg",
-        // "/Portfolio Links/Screens/Kept UI/jpg/7-Join Wireless – 1.jpg",
-        // "/Portfolio Links/Screens/Kept UI/jpg/8-Events – 1.jpg",
-        // "/Portfolio Links/Screens/Kept UI/jpg/9-Motion – 1.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/1-Home – 1.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/2-Home Open – 2.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/3-Rooms open – 1.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/4-Groups – Open – 2.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/5-No Select wireless – 1.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/6-Password – 1.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/7-Join Wireless – 1.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/8-Events – 1.jpg",
+        "/Portfolio Links/Screens/Kept UI/jpg/9-Motion – 1.jpg",
       ],
       video:
         "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/KeptDIY.mp4",
