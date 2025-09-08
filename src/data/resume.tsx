@@ -86,9 +86,9 @@ export const DATA = {
       logoUrl: "/Logos/Costco.png",
       start: "01/2023",
       end: "Present",
-      description: `- Made Costco’s internal ordering easier: **35% fewer data-entry errors** and smoother multi-vendor purchases across teams.
-- Designed and tested a **smart order-entry tool** so fulfillment teams could **move quicker and make fewer errors** in the first 6 months.
-- Created a shared **Figma component library** so every app (inventory, payroll, HR) **looks and works the same** — and ships **faster**.`,
+      description: `- **Redesigned Costco’s internal Order Management System (OMS)**; cut manual entry errors **35%** and streamlined **multi-vendor** purchasing across departments.
+- **Led UX research and rapid prototyping** for an **AI-assisted order-entry tool** using Claude Opus 4; improved fulfillment team efficiency and task accuracy **within 6 months of launch**.
+- **Built a scalable Figma design system** (components, tokens, docs) unifying UI patterns across **Inventory, Payroll, and HR**; **accelerated developer handoff** and improved **company-wide design consistency**.`,
     },
     {
       company: "Intermountain Health",
@@ -111,9 +111,9 @@ export const DATA = {
       logoUrl: "/Logos/bii consulting.jpg",
       start: "06/2024",
       end: "05/2025",
-      description: `- Designed easy dashboards for admins and employees that **work on any device**—so even non-tech users picked them up quickly.
-- Made payroll simpler across campuses: **40% faster** processing in 8 weeks and **clean payouts for 500+ people**.
-- Talked with church staff to build what they needed most: **PTO tools**, **automated giving-based payroll**, and **permissions by role**.`,
+      description: `- **Redesigned multi-campus payroll reporting**; cut processing time **40%** in the first **8 weeks** and enabled faster, error-free payouts for **500+ staff**.
+- **Built admin & employee dashboards in Figma**; optimized for non-technical users and **mobile/desktop** accessibility, increasing adoption of the new system.
+- **Led user research with pastors and church administrators**; insights drove **PTO tracking**, **automated giving-based payroll**, and **role-based access permissions**.`,
     },
     {
       company: "State of Washington",
@@ -124,8 +124,9 @@ export const DATA = {
       logoUrl: "/Logos/state of washington.svg",
       start: "08/2020",
       end: "01/2023",
-      description: `- Built a Washington-wide app so veterans can  **quickly find jobs, training programs, and nearby resources** — making support easier to access.
-- Designed a **straightforward, easy-to-read interface** (great for older users or anyone new to job apps), which  **boosted engagement** during pilots.`,
+      description: `- **Designed a statewide veterans employment app (WA)**; centralized **jobs, training, and local resources**, significantly improving access to support.
+- **Led UX strategy & Figma prototyping**; delivered a **simple, accessible interface** for **older users** and **first-time smartphone job seekers**, increasing engagement in pilot tests.
+- **Shipped in a 3-month sprint**; partnered with **legal**, **accessibility**, and **engineering** to meet **state compliance** and user needs.`,
     },
     {
       company: "Safe Home Security, Inc.",
@@ -137,8 +138,8 @@ export const DATA = {
         "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/Safe%20home%20security.png",
       start: "12/2017",
       end: "01/2020",
-      description: `- Created a dashboard so reps can  **see commissions, bonuses, and sales performance in real time** — with clear visibility across regions.
-- Simplified the **pay-transparency experience** in Figma, which led to **fewer payroll questions** and **happier reps**, based on internal feedback.`,
+      description: `- **Created a dashboard** so reps can **see commissions, bonuses, and sales performance in real time** — with clear visibility across regions.
+- **Simplified the pay-transparency experience** in Figma, which led to **fewer payroll questions** and **happier reps**, based on internal feedback.`,
     },
     // {
     //   company: "Mitre Media",
@@ -166,7 +167,7 @@ export const DATA = {
       school: "University of Utah",
       href: "https://www.utah.edu",
       degree: "Bachelor of Fine Arts in Graphic Design",
-      logoUrl: "/waterloo.png",
+      logoUrl: "/utah.jpeg",
       start: "2003",
       end: "2005",
     },
