@@ -8,17 +8,21 @@ export const DATA = {
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Graphic Designer turned Lead Product Designer. I love building things and helping people.",
+    "Graphic Designer turned Lead Product Designer. Graphic Designer turned Lead Product Designer. I love designing enterprise level applications.",
   summary:
-    "Product Designer with 16 years building AI-powered platforms and enterprise tools. In the past five years, I’ve led initiatives that lifted workflow efficiency by up to 40%. I pair deep user research with scalable Figma design systems to simplify complex SaaS across healthcare, retail, and government, integrating models like Claude Opus 4 and DeepSeek-V3/R1 to deliver truly user-centric products.",
+    "I’m a Product Designer with 16 years of experience turning complex software into simple, friendly tools. In the past five years, my work has helped teams work up to **40% faster**. I pair deep user research with scalable **Figma** systems and practical **AI** to build clear, trustworthy products across healthcare, retail, and government.",
   avatarUrl: "/me.png",
   skills: [
+    "UX/UI Research",
+    "UX/UI Design",
     "Webflow",
     "Figma",
-    "Creative Cloud",
+    "Adobe Creative Cloud",
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Tailwind CSS",
     "LLM models",
-    "MiniMax",
-    "Antrhopic",
     "Cursor",
     "RooCode",
     "Moonshot",
@@ -26,8 +30,6 @@ export const DATA = {
     "Context Engineering",
     "Retrieval Augmented Generation",
     "Command Line Interface",
-    "Integrated Development Environment",
-    "VS Code",
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -84,8 +86,9 @@ export const DATA = {
       logoUrl: "/Logos/Costco.png",
       start: "01/2023",
       end: "Present",
-      description:
-        "Redesigned Costco’s internal order management platform, reducing manual entry errors by 35% and streamlining multi-vendor purchasing workflows across departments. Led UX research and prototyping for an AI-informed order entry tool, leveraging Claude Opus 4 to boost fulfillment team efficiency and improve task accuracy within 6 months of launch. Built a scalable Figma design system that unified UI patterns across inventory, payroll, and HR tools, accelerating developer handoff and improving design consistency company-wide.",
+      description: `- Made Costco’s internal ordering easier: **35% fewer data-entry errors** and smoother multi-vendor purchases across teams.
+- Designed and tested a **smart order-entry tool** so fulfillment teams could **move quicker and make fewer errors** in the first 6 months.
+- Created a shared **Figma component library** so every app (inventory, payroll, HR) **looks and works the same** — and ships **faster**.`,
     },
     {
       company: "Intermountain Health",
@@ -96,8 +99,8 @@ export const DATA = {
       logoUrl: "/Logos/intermountain health.webp",
       start: "04/2024",
       end: "08/2025",
-      description:
-        "Integrated predictive scheduling logic by partnering with engineers and using real-time patient flow data (plus historical booking patterns) to surface optimal appointment slots, enhancing operational efficiency. Built responsive, role-based dashboards in Figma, allowing care teams to quickly view prescriptions, patient history, and medication alerts in a HIPAA-compliant interface, resulting in improved care coordination.",
+      description: `- Designed a healthcare CRM and made scheduling smarter by using live patient traffic and past trends to recommend the **best time slots**—the day runs smoother.
+- Created clean, role-specific dashboards (HIPAA-compliant) that put **prescriptions, history, and med alerts** in one place so teams **coordinate faster**.`,
     },
     {
       company: "Bii Consulting",
@@ -108,33 +111,34 @@ export const DATA = {
       logoUrl: "/Logos/bii consulting.jpg",
       start: "06/2024",
       end: "05/2025",
-      description:
-        "Redesigned the payroll reporting workflow for a multi-campus organization, cutting processing time by 40% in the first 8 weeks and enabling faster, error-free payouts for over 500 staff members. Built intuitive admin and employee dashboards in Figma, optimized for non-technical users and fully accessible across devices (mobile and desktop), improving user adoption of the new system. Led user research sessions with pastors and church administrators, directly shaping features like PTO tracking, automated giving-based payroll, and role-based access permissions based on feedback.",
+      description: `- Designed easy dashboards for admins and employees that **work on any device**—so even non-tech users picked them up quickly.
+- Made payroll simpler across campuses: **40% faster** processing in 8 weeks and **clean payouts for 500+ people**.
+- Talked with church staff to build what they needed most: **PTO tools**, **automated giving-based payroll**, and **permissions by role**.`,
     },
     {
       company: "State of Washington",
       href: "",
       badges: [],
       location: "San Jose, CA",
-      title: "Mobile UX/UI Designer",
+      title: "Mobile UX/UI Designer • Full-time Seattle",
       logoUrl: "/Logos/state of washington.svg",
       start: "08/2020",
       end: "01/2023",
-      description:
-        "Designed a statewide mobile app to help military veterans find jobs, training programs, and local resources, significantly improving access to employment support across Washington state. Led UX strategy and prototyping in Figma, creating a simple, accessible interface tailored for older users and those new to smartphone job platforms, which increased user engagement in pilot tests.",
+      description: `- Built a Washington-wide app so veterans can  **quickly find jobs, training programs, and nearby resources** — making support easier to access.
+- Designed a **straightforward, easy-to-read interface** (great for older users or anyone new to job apps), which  **boosted engagement** during pilots.`,
     },
     {
       company: "Safe Home Security, Inc.",
       href: "",
       badges: [],
       location: "San Francisco, CA",
-      title: "Creative Director",
+      title: "Creative Director • Full-time Draper",
       logoUrl:
         "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/Safe%20home%20security.png",
       start: "12/2017",
       end: "01/2020",
-      description:
-        "Designed a sales payroll dashboard for reps to easily track commissions, bonuses, and sales performance in real time across multiple regions, providing greater transparency into earnings. Built streamlined workflows in Figma that simplified pay transparency, reducing payroll-related support tickets and improving sales rep satisfaction based on internal survey feedback.",
+      description: `- Created a dashboard so reps can  **see commissions, bonuses, and sales performance in real time** — with clear visibility across regions.
+- Simplified the **pay-transparency experience** in Figma, which led to **fewer payroll questions** and **happier reps**, based on internal feedback.`,
     },
     // {
     //   company: "Mitre Media",
@@ -174,7 +178,7 @@ export const DATA = {
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
-        "Developed AskBlake, that turns prompts into production-ready web apps: FinTech dashboards, and enterprise components. It scaffolds clean code with shadcn/ui and Tailwind, shows live previews, and exports to your stack fast—so teams ship reliable features without boilerplate.",
+        "Developed AskBlake, that turns prompts into production-ready web apps: FinTech dashboards, and enterprise components.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -203,7 +207,7 @@ export const DATA = {
       dates: "June 2023 - Present",
       active: true,
       description:
-        "Designed and launched an AI-powered employee portal for scheduling and prescription access, improving task completion rates by 30% within the first 60 days of rollout across clinics.",
+        "Designed and launched an AI-powered employee portal for sDeveloped Blakebill, a file transfer service that pays you before delivery. Upload files, set a price, and share a secure linkcheduling and prescription access, improving task completion rates by 30% within the first 60 days of rollout across clinics.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -240,7 +244,7 @@ export const DATA = {
       dates: "April 2023 - September 2023",
       active: true,
       description:
-        "Developed Blakebill, a file transfer service that pays you before delivery. Upload files, set a price, and share a secure link—clients pay to unlock the download.",
+        "Developed Blakebill, a file transfer service that pays you before delivery. Upload files, set a price, and share a secure link.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -280,7 +284,7 @@ export const DATA = {
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Designed & Developed the payroll reporting workflow for a multi-campus organization, cutting processing time by 40% in the first 8 weeks and enabling faster, error-free payouts for over 500 staff members",
+        "Designed & Developed the payroll reporting workflow for a multi-campus organizations.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -322,7 +326,7 @@ export const DATA = {
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Redesigned Costco’s internal order management platform, reducing manual entry errors by 35% and streamlining multi-vendor purchasing workflows across departments.",
+        "Redesigned Costco’s internal order management platform, streamlining multi-vendor purchasing workflows across departments.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -431,7 +435,7 @@ export const DATA = {
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Designed the UI of Kept DIY that is a wireless home security system you install in minutes. Monitor and control your home from your smartphone, add sensors, cameras, and alarms, and get tailored monitoring options.",
+        "Designed the UI of Kept DIY that is a wireless home security system you install in minutes.",
       technologies: [
         "Next.js",
         "Typescript",

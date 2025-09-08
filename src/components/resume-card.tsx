@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import Markdown from "react-markdown";
 
 interface ResumeCardProps {
   logoUrl: string;
@@ -18,6 +19,7 @@ interface ResumeCardProps {
   badges?: readonly string[];
   period: string;
   description?: string;
+  defaultExpanded?: boolean;
 }
 export const ResumeCard = ({
   logoUrl,
@@ -28,8 +30,9 @@ export const ResumeCard = ({
   badges,
   period,
   description,
+  defaultExpanded = false,
 }: ResumeCardProps) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(defaultExpanded);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (description) {
@@ -98,9 +101,11 @@ export const ResumeCard = ({
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 text-xs sm:text-sm"
+              className="mt-2"
             >
-              {description}
+              <Markdown className="prose max-w-full text-pretty font-sans text-xs sm:text-sm text-muted-foreground dark:prose-invert">
+                {description}
+              </Markdown>
             </motion.div>
           )}
         </div>
