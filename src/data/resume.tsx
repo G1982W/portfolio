@@ -8,7 +8,7 @@ export const DATA = {
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
-    "Graphic Designer turned Lead Product Designer. Graphic Designer turned Lead Product Designer. I love designing enterprise level applications.",
+    "Graphic Designer turned Lead Product Designer. I love designing enterprise level applications.",
   summary:
     "I’m a Product Designer with 16 years of experience turning complex software into simple, friendly tools. In the past five years, my work has helped teams work up to **40% faster**. I pair deep user research with scalable **Figma** systems and practical **AI** to build clear, trustworthy products across healthcare, retail, and government.",
   avatarUrl: "/me.png",
