@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     default: DATA.name,
     template: `%s | ${DATA.name}`,
   },
-  description: DATA.description,
+  description: DATA.metaDescription,
   openGraph: {
-    title: `${DATA.name}`,
-    description: DATA.description,
+    title: `${DATA.OG.title}`,
+    description: `${DATA.OG.description}`,
     url: DATA.url,
-    siteName: `${DATA.name}`,
+    siteName: `${DATA.OG.siteName}`,
     locale: "en_US",
     type: "website",
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
+    title: `${DATA.OG.title}`,
     card: "summary_large_image",
   },
   verification: {
