@@ -2,15 +2,24 @@ import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
-  name: "Greg",
+  name: "Greg Walker — Principal Product Designer | Enterprise & Health Tech",
   initials: "DV",
   url: "https://dillion.io",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
-  description: "I love designing enterprise level applications.",
+  description:
+    "Principal Product Designer with 16+ years building enterprise software and health tech products that people actually want to use.",
   summary:
-    "I’m a Product Designer with 16 years of experience turning complex software into simple, friendly tools. In the past five years, my work has helped teams work up to **40% faster**. I pair deep user research with scalable **Figma** systems and practical **AI** to build clear, trustworthy products across healthcare, retail, and government.",
+    "I'm a Principal Product Designer with 16+ years of experience leading product design across enterprise software, health tech, and consumer platforms. I specialize in turning high-complexity systems — clinical workflows, order management, payroll, and AI-assisted tooling — into interfaces that are fast, intuitive, and built to scale. My work has measurably improved team efficiency by up to 40%, and I bring the same rigor to design systems, UX research, and cross-functional leadership. I've shipped products for Fortune 500 companies, government agencies, and health systems — always grounded in real user needs and engineered for long-term impact.",
   avatarUrl: "/me.png",
+  metaDescription:
+    "Principal Product Designer with 16+ years in enterprise software and health tech. Helping teams ship faster, smarter, and at scale.",
+  OG: {
+    title: "Greg Walker — Principal Product Designer",
+    description:
+      "16+ years designing enterprise software and health tech products for Costco, Intermountain Health, T-Mobile, and more. Available for contract engagements.",
+    siteName: "Greg Walker",
+  },
   skills: [
     "UX/UI Research",
     "UX/UI Design",
@@ -77,29 +86,43 @@ export const DATA = {
 
   work: [
     {
+      company: "Smyl Fitness",
+      href: "",
+      badges: [],
+      location: "Remote",
+      title: "Principal Product Designer",
+      logoUrl: "/Logos/smylfitness.png",
+      start: "10/2025",
+      end: "Present",
+      description: `- **Led end-to-end UX/UI design for Minute Moves**, a fitness app built for older adults — covering onboarding, workout screens, and feature pages with accessibility-first interaction patterns.
+- **Designed Smyl Insight, a custom enterprise CRM for desktop** that enables hospitals and clinicians to log, track, and review patient fitness assessments in a structured, role-appropriate interface.
+- **Bridged consumer and enterprise product needs within a single design practice** — maintaining design consistency across a patient-facing mobile app and a clinical-grade desktop platform simultaneously.`,
+    },
+    {
       company: "Costco",
       href: "",
       badges: [],
       location: "Remote",
-      title: "Lead UX/UI Designer",
+      title: "Principal UX/UI Designer",
       logoUrl: "/Logos/Costco.png",
       start: "01/2023",
       end: "Present",
-      description: `- **Redesigned Costco’s internal Order Management System (OMS)**; cut manual entry errors **35%** and streamlined **multi-vendor** purchasing across departments.
-- **Led UX research and rapid prototyping** for an **AI-assisted order-entry tool** using Claude Opus 4; improved fulfillment team efficiency and task accuracy **within 6 months of launch**.
-- **Built a scalable Figma design system** (components, tokens, docs) unifying UI patterns across **Inventory, Payroll, and HR**; **accelerated developer handoff** and improved **company-wide design consistency**.`,
+      description: `- **Redesigned Costco's internal Order Management System (OMS)**, reducing manual entry errors by **35%** and streamlining multi-vendor purchasing workflows across departments.
+- **Redesigned the OMS search experience** to unify item number, order number, and vendor lookup into a single, cohesive interface — reducing search friction and helping fulfillment teams locate what they need faster across all purchasing workflows.
+- **Architected a scalable Figma design system** — components, tokens, and documentation — unifying UI patterns across Inventory, Payroll, and HR, accelerating developer handoff company-wide.`,
     },
     {
       company: "Intermountain Health",
       badges: [],
       href: "",
       location: "Remote",
-      title: "Acting Lead Product Designer",
+      title: "Principal Product Designer",
       logoUrl: "/Logos/intermountain health.webp",
       start: "04/2024",
       end: "08/2025",
-      description: `- Designed a healthcare CRM and made scheduling smarter by using live patient traffic and past trends to recommend the **best time slots**—the day runs smoother.
-- Created clean, role-specific dashboards (HIPAA-compliant) that put **prescriptions, history, and med alerts** in one place so teams **coordinate faster**.`,
+      description: `- **Led product design for their healthcare CRM**, introducing intelligent scheduling powered by live patient traffic and historical trends — reducing scheduling friction and improving daily clinic flow.
+- **Designed HIPAA-compliant, role-based dashboards** consolidating prescriptions, patient history, and medication alerts into a single unified view, enabling faster cross-team coordination.
+- **Partnered with clinical and engineering stakeholders** to ensure designs met strict compliance requirements without sacrificing usability.`,
     },
     {
       company: "Bii Consulting",
@@ -110,10 +133,10 @@ export const DATA = {
       logoUrl: "/Logos/bii consulting.jpg",
       start: "06/2024",
       end: "05/2025",
-      description: `- **Redesigned multi-campus payroll reporting**; cut processing time **40%** in the first **8 weeks** and enabled faster, error-free payouts for **500+ staff**.
-- **Built admin & employee dashboards in Figma**; optimized for non-technical users and **mobile/desktop** accessibility, increasing adoption of the new system.
-- **Led user research with pastors and church administrators**; insights drove **PTO tracking**, **automated giving-based payroll**, and **role-based access permissions**.`,
-    },
+      description: `- **Redesigned multi-campus payroll reporting workflows**, cutting processing time by **40%** in the first **8 weeks** and enabling accurate, error-free payouts for **500+ staff**.
+- **Built admin and employee dashboards in Figma** optimized for non-technical users across **mobile** and **desktop**, driving rapid adoption of the new system.
+- **Led user research with church administrators and pastors**, translating insights into concrete product features: **PTO tracking**, **giving-based payroll automation**, and **role-based access controls**.`,
+  },
     {
       company: "State of Washington",
       href: "",
@@ -123,9 +146,9 @@ export const DATA = {
       logoUrl: "/Logos/state of washington.svg",
       start: "08/2020",
       end: "01/2023",
-      description: `- **Designed a statewide veterans employment app (WA)**; centralized **jobs, training, and local resources**, significantly improving access to support.
-- **Led UX strategy & Figma prototyping**; delivered a **simple, accessible interface** for **older users** and **first-time smartphone job seekers**, increasing engagement in pilot tests.
-- **Shipped in a 3-month sprint**; partnered with **legal**, **accessibility**, and **engineering** to meet **state compliance** and user needs.`,
+      description: `- **Designed a statewide veterans employment app**, centralizing **jobs, training programs, and local resources** — significantly expanding access to support services for veterans across Washington.
+- **Led UX strategy and Figma prototyping** for a **simple, accessible interface** serving **older adults** and **first-time smartphone users**, driving strong engagement in pilot testing.
+- **Shipped in a 3-month sprint**, coordinating with **legal**, **accessibility**, and **engineering** to meet **state compliance** requirements while maintaining a user-first experience.`,
     },
     {
       company: "Safe Home Security, Inc.",
@@ -136,8 +159,8 @@ export const DATA = {
       logoUrl: "/Logos/Safe home security.png",
       start: "12/2017",
       end: "01/2020",
-      description: `- **Created a dashboard** so reps can **see commissions, bonuses, and sales performance in real time** — with clear visibility across regions.
-- **Simplified the pay-transparency experience** in Figma, which led to **fewer payroll questions** and **happier reps**, based on internal feedback.`,
+      description: `- **Designed a real-time sales performance dashboard** giving reps clear visibility into **commissions, bonuses, and regional performance metrics** in a single view.
+- **Simplified the pay-transparency experience** in Figma, measurably **reducing inbound payroll questions** and **improving rep satisfaction** based on internal feedback.`,
     },
     // {
     //   company: "Mitre Media",
@@ -172,6 +195,92 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "BlakeUI",
+      href: "https://www.blakeui.com/",
+      dates: "Feb 2026 - present",
+      active: true,
+      description:
+        "Designed the UI components for use with health-tech startups.",
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Supabase",
+        "Stripe",
+        "Shadcn UI",
+        "Radix UI",
+        "Fumadocs",
+        "Framer Motion",
+        "Zustand",
+        "React Hook Form + Zod",
+        "TanStack Table",
+        "Recharts",
+        "Lucide Icons",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.blakeui.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      images: [],
+      video: "/Portfolio Links/BlakeUI.mp4",
+    },
+    {
+      title: "Smyl Fitness",
+      href: "https://smylfitness.com/",
+      dates: "Feb 2026 - present",
+      active: true,
+      description:
+        "Designed the Minute Moves fitness mobile health app & the desktop CRM Insights which tracks patient mobility data.",
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Supabase",
+        "Stripe",
+        "Shadcn UI",
+        "Radix UI",
+        "Fumadocs",
+        "Framer Motion",
+        "Zustand",
+        "React Hook Form + Zod",
+        "TanStack Table",
+        "Recharts",
+        "Lucide Icons",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://smylfitness.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Screen",
+          href: "Screen",
+          icon: <Icons.framermotion className="size-3" />,
+        },
+      ],
+      image: "",
+      images: [
+        "/Portfolio Links/Screens/Smyl Screens/001.jpg",
+        "/Portfolio Links/Screens/Smyl Screens/002.jpg",
+        "/Portfolio Links/Screens/Smyl Screens/003.jpg",
+        "/Portfolio Links/Screens/Smyl Screens/004.jpg",
+        "/Portfolio Links/Screens/Smyl Screens/005.jpg",
+        "/Portfolio Links/Screens/Smyl Screens/006.jpg",
+        "/Portfolio Links/Screens/Smyl Screens/m000.png",
+        "/Portfolio Links/Screens/Smyl Screens/m001.png",
+        "/Portfolio Links/Screens/Smyl Screens/m002.png",
+        "/Portfolio Links/Screens/Smyl Screens/m003.png",
+      ],
+      video: "",
+    },
+    {
       title: "AskBlake",
       href: "https://www.askblake.dev",
       dates: "Jan 2024 - Feb 2024",
@@ -205,7 +314,7 @@ export const DATA = {
       dates: "June 2023 - Present",
       active: true,
       description:
-        "Designed and launched an AI-powered employee portal for sDeveloped Blakebill, a file transfer service that pays you before delivery. Upload files, set a price, and share a secure linkcheduling and prescription access, improving task completion rates by 30% within the first 60 days of rollout across clinics.",
+        "Designed and launched an AI-powered employee portal for scheduling and prescription access, improving task completion rates by 30% within the first 60 days of rollout across clinics.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -343,11 +452,12 @@ export const DATA = {
       ],
       image: "",
       images: [
-        "/Portfolio Links/Screens/Costco/jpg/1_Advanced search page.jpg",
-        "/Portfolio Links/Screens/Costco/jpg/2_Navigate to an item page through advanced search and then back to advnaced search - 22.jpg",
-        "/Portfolio Links/Screens/Costco/jpg/3_Item Vendor.jpg",
-        "/Portfolio Links/Screens/Costco/jpg/4_Display results - search results table - 116.jpg",
-        "/Portfolio Links/Screens/Costco/jpg/5_Autocomplete.jpg",
+        "/Portfolio Links/Screens/Costco Screens/001.png",
+        "/Portfolio Links/Screens/Costco Screens/002.png",
+        "/Portfolio Links/Screens/Costco Screens/003.png",
+        "/Portfolio Links/Screens/Costco Screens/004.png",
+        "/Portfolio Links/Screens/Costco Screens/005.png",
+        "/Portfolio Links/Screens/Costco Screens/006.png",
       ],
       video: "",
     },
@@ -424,137 +534,137 @@ export const DATA = {
       images: [],
       video: "/Portfolio Links/OrizonEnergy.mp4",
     },
-    {
-      title: "Kept by Safe Home Security",
-      href: "KeptDIY.com",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Designed the UI of Kept DIY that is a wireless home security system you install in minutes.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://KeptDIY.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Screen",
-          href: "Screen",
-          icon: <Icons.framermotion className="size-3" />,
-        },
-      ],
-      image: "",
-      images: [
-        "/Portfolio Links/Screens/Kept UI/jpg/1-Home – 1.jpg",
-        "/Portfolio Links/Screens/Kept UI/jpg/2-Home Open – 2.jpg",
-        "/Portfolio Links/Screens/Kept UI/jpg/3-Rooms open – 1.jpg",
-        "/Portfolio Links/Screens/Kept UI/jpg/4-Groups – Open – 2.jpg",
-        "/Portfolio Links/Screens/Kept UI/jpg/5-No Select wireless – 1.jpg",
-        "/Portfolio Links/Screens/Kept UI/jpg/6-Password – 1.jpg",
-        "/Portfolio Links/Screens/Kept UI/jpg/7-Join Wireless – 1.jpg",
-        "/Portfolio Links/Screens/Kept UI/jpg/8-Events – 1.jpg",
-        "/Portfolio Links/Screens/Kept UI/jpg/9-Motion – 1.jpg",
-      ],
-      video: "/Portfolio Links/KeptDIY.mp4",
-    },
-    {
-      title: "Lightfusion",
-      href: "https://lightfusion.io",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Designed & developed the site of Lightfusion.io which is an AR-powered solar proposal platform that builds accurate designs in minutes.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://lightfusion.io",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      images: [],
-      video: "/Portfolio Links/LightFusion.mp4",
-    },
-    {
-      title: "Callpilot",
-      href: "Callpilot.app",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Designed the site, UI and dashboard of Callpilot which automates third-party verification with AI-driven digital surveys.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://Callpilot.app",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      images: [],
-      video: "/Portfolio Links/Callpilot.mp4",
-    },
-    {
-      title: "Core365",
-      href: "Callpilot.app",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Designed & developed the site of Core365, an AI-powered, all-in-one ERP that unifies your sales stack.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://core365.app",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      images: [],
-      video: "/Portfolio Links/Core365.mp4",
-    },
+    // {
+    //   title: "Kept by Safe Home Security",
+    //   href: "KeptDIY.com",
+    //   dates: "April 2023 - March 2024",
+    //   active: true,
+    //   description:
+    //     "Designed the UI of Kept DIY that is a wireless home security system you install in minutes.",
+    //   technologies: [
+    //     "Next.js",
+    //     "Typescript",
+    //     "PostgreSQL",
+    //     "Prisma",
+    //     "TailwindCSS",
+    //     "Shadcn UI",
+    //     "Magic UI",
+    //     "Stripe",
+    //     "Cloudflare Workers",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://KeptDIY.com",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //     {
+    //       type: "Screen",
+    //       href: "Screen",
+    //       icon: <Icons.framermotion className="size-3" />,
+    //     },
+    //   ],
+    //   image: "",
+    //   images: [
+    //     "/Portfolio Links/Screens/Kept UI/jpg/1-Home – 1.jpg",
+    //     "/Portfolio Links/Screens/Kept UI/jpg/2-Home Open – 2.jpg",
+    //     "/Portfolio Links/Screens/Kept UI/jpg/3-Rooms open – 1.jpg",
+    //     "/Portfolio Links/Screens/Kept UI/jpg/4-Groups – Open – 2.jpg",
+    //     "/Portfolio Links/Screens/Kept UI/jpg/5-No Select wireless – 1.jpg",
+    //     "/Portfolio Links/Screens/Kept UI/jpg/6-Password – 1.jpg",
+    //     "/Portfolio Links/Screens/Kept UI/jpg/7-Join Wireless – 1.jpg",
+    //     "/Portfolio Links/Screens/Kept UI/jpg/8-Events – 1.jpg",
+    //     "/Portfolio Links/Screens/Kept UI/jpg/9-Motion – 1.jpg",
+    //   ],
+    //   video: "/Portfolio Links/KeptDIY.mp4",
+    // },
+    // {
+    //   title: "Lightfusion",
+    //   href: "https://lightfusion.io",
+    //   dates: "April 2023 - March 2024",
+    //   active: true,
+    //   description:
+    //     "Designed & developed the site of Lightfusion.io which is an AR-powered solar proposal platform that builds accurate designs in minutes.",
+    //   technologies: [
+    //     "Next.js",
+    //     "Typescript",
+    //     "PostgreSQL",
+    //     "Prisma",
+    //     "TailwindCSS",
+    //     "Shadcn UI",
+    //     "Magic UI",
+    //     "Stripe",
+    //     "Cloudflare Workers",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://lightfusion.io",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    //   image: "",
+    //   images: [],
+    //   video: "/Portfolio Links/LightFusion.mp4",
+    // },
+    // {
+    //   title: "Callpilot",
+    //   href: "Callpilot.app",
+    //   dates: "April 2023 - March 2024",
+    //   active: true,
+    //   description:
+    //     "Designed the site, UI and dashboard of Callpilot which automates third-party verification with AI-driven digital surveys.",
+    //   technologies: [
+    //     "Next.js",
+    //     "Typescript",
+    //     "PostgreSQL",
+    //     "Prisma",
+    //     "TailwindCSS",
+    //     "Shadcn UI",
+    //     "Magic UI",
+    //     "Stripe",
+    //     "Cloudflare Workers",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://Callpilot.app",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    //   image: "",
+    //   images: [],
+    //   video: "/Portfolio Links/Callpilot.mp4",
+    // },
+    // {
+    //   title: "Core365",
+    //   href: "Callpilot.app",
+    //   dates: "April 2023 - March 2024",
+    //   active: true,
+    //   description:
+    //     "Designed & developed the site of Core365, an AI-powered, all-in-one ERP that unifies your sales stack.",
+    //   technologies: [
+    //     "Next.js",
+    //     "Typescript",
+    //     "PostgreSQL",
+    //     "Prisma",
+    //     "TailwindCSS",
+    //     "Shadcn UI",
+    //     "Magic UI",
+    //     "Stripe",
+    //     "Cloudflare Workers",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://core365.app",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    //   image: "",
+    //   images: [],
+    //   video: "/Portfolio Links/Core365.mp4",
+    // },
   ],
   hackathons: [
     {

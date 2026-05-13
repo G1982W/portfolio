@@ -14,7 +14,6 @@ import Markdown from "react-markdown";
 import { useState } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
-
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState<readonly string[]>([]);
