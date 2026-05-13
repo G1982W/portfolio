@@ -133,8 +133,7 @@ export const DATA = {
       badges: [],
       location: "San Francisco, CA",
       title: "Creative Director • Full-time Draper",
-      logoUrl:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/Safe%20home%20security.png",
+      logoUrl: "/Logos/Safe home security.png",
       start: "12/2017",
       end: "01/2020",
       description: `- **Created a dashboard** so reps can **see commissions, bonuses, and sales performance in real time** — with clear visibility across regions.
@@ -198,8 +197,7 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.4/Logos/askblake.mp4",
+      video: "/Portfolio Links/askblake.mp4",
     },
     {
       title: "Intermountain Health",
@@ -275,8 +273,7 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/blakebill.mp4",
+      video: "/Portfolio Links/blakebill.mp4",
     },
     {
       title: "Carbon HRM",
@@ -317,8 +314,7 @@ export const DATA = {
         "/Portfolio Links/Screens/CarbonHRM/5.png",
         "/Portfolio Links/Screens/CarbonHRM/6.png",
       ],
-      video:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/CarbonHRM.mp4",
+      video: "/Portfolio Links/CarbonHRM.mp4",
     },
     {
       title: "Costco",
@@ -426,8 +422,7 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/OrizonEnergy.mp4",
+      video: "/Portfolio Links/OrizonEnergy.mp4",
     },
     {
       title: "Kept by Safe Home Security",
@@ -471,8 +466,7 @@ export const DATA = {
         "/Portfolio Links/Screens/Kept UI/jpg/8-Events – 1.jpg",
         "/Portfolio Links/Screens/Kept UI/jpg/9-Motion – 1.jpg",
       ],
-      video:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/KeptDIY.mp4",
+      video: "/Portfolio Links/KeptDIY.mp4",
     },
     {
       title: "Lightfusion",
@@ -501,8 +495,7 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/LightFusion.mp4",
+      video: "/Portfolio Links/LightFusion.mp4",
     },
     {
       title: "Callpilot",
@@ -531,8 +524,7 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/Callpilot.mp4",
+      video: "/Portfolio Links/Callpilot.mp4",
     },
     {
       title: "Core365",
@@ -561,8 +553,7 @@ export const DATA = {
       ],
       image: "",
       images: [],
-      video:
-        "https://cdn.jsdelivr.net/gh/c0mac/greg-assets@v1.0.3/Logos/Core365.mp4",
+      video: "/Portfolio Links/Core365.mp4",
     },
   ],
   hackathons: [
