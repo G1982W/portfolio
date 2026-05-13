@@ -91,7 +91,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Principal Product Designer",
-      logoUrl: "/Logos/smylfitness.png",
+      logoUrl: "/Logos/smylfitness.jpg",
       start: "10/2025",
       end: "Present",
       description: `- **Led end-to-end UX/UI design for Minute Moves**, a fitness app built for older adults — covering onboarding, workout screens, and feature pages with accessibility-first interaction patterns.
