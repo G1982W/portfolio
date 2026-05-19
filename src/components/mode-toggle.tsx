@@ -10,6 +10,7 @@ export const ModeToggle = () => {
       <label className="theme-switch">
         <input
           className="theme-switch__checkbox"
+          checked={theme === "dark"}
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           type="checkbox"
         />
