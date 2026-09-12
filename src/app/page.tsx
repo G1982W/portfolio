@@ -6,7 +6,6 @@ import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ModeToggle } from "@/components/mode-toggle";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
-import { Badge } from "@/components/ui/badge";
 import { Modal } from "@/components/ui/modal";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
@@ -112,7 +111,7 @@ export default function Page() {
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
-                period={`${education.start} - ${education.end}`}
+                period={"start" in education ? `${education.start} - ${education.end}` : ""}
               />
             </BlurFade>
           ))}
@@ -123,10 +122,18 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+          <div className="flex flex-col gap-y-2">
+            {DATA.skills.map((group, id) => (
+              <BlurFade
+                key={group.label}
+                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              >
+                <p className="text-pretty font-sans text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">
+                    {group.label}:
+                  </span>{" "}
+                  {group.items.join(", ")}
+                </p>
               </BlurFade>
             ))}
           </div>
