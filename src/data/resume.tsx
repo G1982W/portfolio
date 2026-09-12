@@ -510,9 +510,9 @@ export const DATA = {
       image: "",
       images: [
         "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/Add Product - Retailer View - Populated.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Dashboard – 1.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Inventory Allocation 03 – 2.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Thatchat – 2.jpg",
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Dashboard - 1.jpg",
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Inventory Allocation 03 - 2.jpg",
+        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Thatchat - 2.jpg",
         "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/History Detailed View Fullscreen.jpg",
         "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/History.jpg",
         // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/1_Login Screen.jpg",
