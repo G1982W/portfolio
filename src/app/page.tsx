@@ -236,14 +236,14 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Don’t hesitate to reach out to me here, and I will get back to
-                you as soon as possible.{" "}
+                Don&apos;t hesitate to reach out to me{" "}
                 <Link
                   href={"mailto:mail@gregwalker.cc"}
                   className="text-blue-500 hover:underline"
                 >
                   here
                 </Link>
+                , and I will get back to you as soon as possible.
               </p>
             </div>
           </BlurFade>
