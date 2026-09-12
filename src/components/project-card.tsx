@@ -33,6 +33,7 @@ interface Props {
         href: string;
       }[]
     | undefined;
+  label?: string;
   className?: string;
   onScreenClick?: (images: readonly string[], title: string) => void;
 }
@@ -48,6 +49,7 @@ export function ProjectCard({
   images,
   video,
   links,
+  label,
   className,
   onScreenClick,
 }: Props) {
@@ -118,7 +120,7 @@ export function ProjectCard({
         )}
       </CardContent> */}
       <CardFooter className="px-2 pb-2">
-        {links && links.length > 0 && (
+        {((links && links.length > 0) || label) && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => {
               if (link.type === "Screen" && images && images.length > 0) {
@@ -163,6 +165,12 @@ export function ProjectCard({
                 </>
               );
             })}
+            {/* Non-interactive: projects without a public URL get a label, not a link. */}
+            {label && (
+              <span className="self-center font-sans text-[10px] text-muted-foreground">
+                {label}
+              </span>
+            )}
           </div>
         )}
       </CardFooter>

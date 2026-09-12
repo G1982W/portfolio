@@ -175,7 +175,7 @@ export const DATA = {
       dates: "Feb 2026 - present",
       active: true,
       description:
-        "Designed the Minute Moves fitness mobile health app & the desktop CRM Insights which tracks patient mobility data.",
+        "Minute Moves, a mobile fitness app for older adults, plus Smyl Insight, the clinical CRM now in use at 5+ Chicago-area hospitals.",
       technologies: [
         "Next.js",
         "React",
@@ -222,11 +222,12 @@ export const DATA = {
     },
     {
       title: "Costco",
-      href: "https://carbonHRM.com",
+      href: "",
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Redesigned Costco’s internal order management platform, streamlining multi-vendor purchasing workflows across departments.",
+        "Unified item, order, and vendor lookup into one search interface, removing the manual workarounds buyers had built across separate screens.",
+      label: "Internal tool - walkthrough available on request",
       technologies: [
         "Next.js",
         "Typescript",
@@ -262,7 +263,8 @@ export const DATA = {
       dates: "June 2023 - Present",
       active: true,
       description:
-        "Designed and launched an AI-powered employee portal for scheduling and prescription access.",
+        "AI-assisted scheduling and prescription portal with predictive scheduling driven by live patient traffic and historical trends.",
+      label: "Internal tool - walkthrough available on request",
       technologies: [
         "Next.js",
         "Typescript",
@@ -295,11 +297,11 @@ export const DATA = {
     },
     {
       title: "Carbon HRM",
-      href: "https://carbonHRM.com",
+      href: "https://carbonhrm.com",
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Designed & Developed the payroll reporting workflow for a multi-campus organizations.",
+        "Payroll reporting workflow for a multi-campus organization of 500+ staff.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -314,7 +316,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://carbonHRM.com",
+          href: "https://carbonhrm.com",
           icon: <Icons.globe className="size-3" />,
         },
         {
@@ -340,7 +342,7 @@ export const DATA = {
       dates: "Feb 2026 - present",
       active: true,
       description:
-        "Designed the UI components for use with health-tech startups.",
+        "Open-source React component library on ShadCN and Tailwind CSS, with a paid accessibility-first Pro tier.",
       technologies: [
         "Next.js",
         "React",
@@ -375,7 +377,7 @@ export const DATA = {
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
-        "Developed AskBlake, that turns prompts into production-ready web apps: FinTech dashboards, and enterprise components.",
+        "Turns natural-language prompts into production-ready full-stack apps and governed dashboards.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -399,11 +401,11 @@ export const DATA = {
     }, 
     {
       title: "blakebill",
-      href: "blakebill.com",
+      href: "https://blakebill.com",
       dates: "April 2023 - September 2023",
       active: true,
       description:
-        "Developed Blakebill, a file transfer service that pays you before delivery. Upload files, set a price, and share a secure link.",
+        "File transfer that collects payment before delivery. Led all UX/UI design and managed a 3-person dev team through launch.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -433,11 +435,12 @@ export const DATA = {
     },
     {
       title: "Thatch",
-      href: "https://carbonHRM.com",
+      href: "",
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Developed the UX/UI backend and Point-Of-Sale UI for the startup Thatch.",
+        "Point-of-sale UI and back-office workflows for a retail startup.",
+      label: "Internal tool - walkthrough available on request",
       technologies: [
         "Next.js",
         "Typescript",
@@ -476,12 +479,12 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Orizn Energy",
-      href: "https://OrizonEnergy.ca",
+      title: "Orizon Energy",
+      href: "https://orizonenergy.ca",
       dates: "April 2023 - March 2024",
       active: true,
       description:
-        "Designed & developed the site of Orizon energy, is the elading solar company in western Canada",
+        "Site design and build for a solar company in Western Canada.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -496,7 +499,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://OrizonEnergy.ca",
+          href: "https://orizonenergy.ca",
           icon: <Icons.globe className="size-3" />,
         },
       ],

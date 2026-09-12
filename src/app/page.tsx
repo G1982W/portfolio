@@ -167,6 +167,7 @@ export default function Page() {
                   images={project.images}
                   video={project.video}
                   links={project.links || undefined}
+                  label={"label" in project ? project.label : undefined}
                   onScreenClick={handleScreenClick}
                 />
               </BlurFade>
