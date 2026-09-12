@@ -126,19 +126,6 @@ export const DATA = {
     "Earlier: UX/UI and product design for Best Buy, T-Mobile, and agency clients.",
   work: [
     {
-      company: "Smyl Fitness",
-      href: "",
-      badges: [],
-      location: "Salt Lake City, UT",
-      title: "Smyl Insight & Minute Moves",
-      logoUrl: "/Logos/smylfitness.jpg",
-      start: "10/2025",
-      end: "07/2026",
-      description: `- Designed Smyl Insight, an enterprise clinical CRM now in use at 5+ Chicago-area hospitals, letting clinicians log, track, and review patient fitness assessments in structured, role-based views.
-- Led design for Minute Moves, a mobile fitness app for older adults, taking onboarding and workout flows from wireframe to interactive Figma prototype with accessibility-first interaction patterns.
-- Directed 6 front-end designers on branding, color, and component standards, holding one shared design system across a consumer mobile app and a clinical-grade desktop platform.`,
-    },
-    {
       company: "Costco (via Unify Consulting)",
       href: "",
       badges: [],
@@ -150,6 +137,19 @@ export const DATA = {
       description: `- Redesigned Costco's internal Order Management System so buyers complete multi-vendor purchasing in one place, removing the manual workarounds they had built to reconcile vendor, item, and order records across separate screens.
 - Led a 5-designer team that rebuilt OMS search, collapsing three separate lookups (item number, order number, vendor) into one cross-domain flyout with wildcard matching, and wrote the developer specs engineering built from.
 - Architected the Figma design system of components, tokens, and documentation that now carries UI patterns across Inventory, Payroll, and HR.`,
+    },
+    {
+      company: "Smyl Fitness",
+      href: "",
+      badges: [],
+      location: "Salt Lake City, UT",
+      title: "Smyl Insight & Minute Moves",
+      logoUrl: "/Logos/smylfitness.jpg",
+      start: "10/2025",
+      end: "07/2026",
+      description: `- Designed Smyl Insight, an enterprise clinical CRM now in use at 5+ Chicago-area hospitals, letting clinicians log, track, and review patient fitness assessments in structured, role-based views.
+- Led design for Minute Moves, a mobile fitness app for older adults, taking onboarding and workout flows from wireframe to interactive Figma prototype with accessibility-first interaction patterns.
+- Directed 6 front-end designers on branding, color, and component standards, holding one shared design system across a consumer mobile app and a clinical-grade desktop platform.`,
     },
     {
       company: "Intermountain Health",
