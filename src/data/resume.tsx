@@ -9,16 +9,14 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/Salt+Lake+City,+UT",
   description:
     "Principal Product Designer with 16+ years turning high-complexity enterprise SaaS, health tech, and fintech systems into fast, intuitive, accessible products.",
-  summary: `I'm a **Principal Product Designer** with **16+ years** turning high-complexity, data-dense problems into fast, intuitive interfaces across **enterprise SaaS, health tech, and fintech**. I own products end to end, from discovery and rapid Figma prototyping to shipped, scalable systems, and I establish the design systems and standards that teams build on.
-
-I specialize in clinical workflows, order management, AI-assisted tooling, and accessible, data-heavy dashboards. I've shipped for **Fortune 500 companies, government agencies, and health systems**, and founded three design-led software ventures.`,
+  summary: `16+ years turning data-dense, high-complexity systems into interfaces people can move through fast. I own products end to end, set the design systems and standards other designers build on, and have mentored 8 designers across enterprise and health-tech teams. I also ship a production React component library and AI tooling, which keeps my design decisions grounded in what engineering can actually build. Recent clients include Costco, Intermountain Health, and the State of Washington.`,
   avatarUrl: "/me.png",
   metaDescription:
     "Principal Product Designer with 16+ years across enterprise SaaS, health tech, and fintech. Design systems, data-dense dashboards, and products built to scale.",
   OG: {
     title: "Greg Walker — Principal Product Designer",
     description:
-      "16+ years designing enterprise SaaS, health tech, and fintech products for Costco, Intermountain Health, and the State of Washington. Available for contract engagements.",
+      "16+ years designing enterprise SaaS, health tech, and fintech products for Costco, Intermountain Health, and the State of Washington.",
     siteName: "Greg Walker",
   },
   skills: [
@@ -72,71 +70,72 @@ I specialize in clinical workflows, order management, AI-assisted tooling, and a
     },
   },
 
+  workNote:
+    "Concurrent remote contract engagements through my independent practice, Aug 2020 - Present. The date ranges below run in parallel, not in sequence. Senior UX/UI Designer 2020-2023, Principal since 2023.",
+  workEarlier:
+    "Earlier: UX/UI and product design for Best Buy, T-Mobile, and agency clients.",
   work: [
     {
       company: "Smyl Fitness",
       href: "",
-      badges: ["Contract"],
+      badges: [],
       location: "Salt Lake City, UT",
-      title: "Principal UX Designer",
+      title: "Smyl Insight & Minute Moves",
       logoUrl: "/Logos/smylfitness.jpg",
       start: "10/2025",
       end: "07/2026",
-      description: `- **Led end-to-end UX/UI design for Minute Moves**, a fitness app for older adults, taking onboarding, workout, and feature flows from wireframes to high-fidelity, interactive Figma prototypes with accessibility-first interaction patterns.
-- **Designed Smyl Insight, an enterprise SaaS CRM** now used by 5+ hospitals across the Chicago area, letting clinicians log, track, and review patient fitness assessments in structured, role-based views.
-- **Bridged consumer and enterprise needs within one design practice**, maintaining a shared design system and directing front-end designers on its branding, color, and component standards across a patient-facing mobile app and a clinical-grade desktop platform.`,
+      description: `- Designed Smyl Insight, an enterprise clinical CRM now in use at 5+ Chicago-area hospitals, letting clinicians log, track, and review patient fitness assessments in structured, role-based views.
+- Led design for Minute Moves, a mobile fitness app for older adults, taking onboarding and workout flows from wireframe to interactive Figma prototype with accessibility-first interaction patterns.
+- Directed 6 front-end designers on branding, color, and component standards, holding one shared design system across a consumer mobile app and a clinical-grade desktop platform.`,
     },
     {
-      company: "Costco",
+      company: "Costco (via Unify Consulting)",
       href: "",
       badges: [],
       location: "Seattle, WA",
-      title: "Principal UX/UI Designer",
+      title: "Order Management System",
       logoUrl: "/Logos/Costco.png",
       start: "01/2023",
       end: "Present",
-      description: `- **Redesigned Costco's internal Order Management System**, reducing manual entry errors by 35% and streamlining multi-vendor purchasing workflows across departments.
-- **Led the design team that rebuilt the OMS search component**, unifying item number, order number, and vendor lookup into one cohesive interface and cutting search friction for inventory and fulfillment teams.
-- **Architected a scalable Figma design system** of components, tokens, and documentation that unified UI patterns across Inventory, Payroll, and HR and accelerated developer handoff company-wide.`,
+      description: `- Redesigned Costco's internal Order Management System so buyers complete multi-vendor purchasing in one place, removing the manual workarounds they had built to reconcile vendor, item, and order records across separate screens.
+- Led a 5-designer team that rebuilt OMS search, collapsing three separate lookups (item number, order number, vendor) into one cross-domain flyout with wildcard matching, and wrote the developer specs engineering built from.
+- Architected the Figma design system of components, tokens, and documentation that now carries UI patterns across Inventory, Payroll, and HR.`,
     },
     {
       company: "Intermountain Health",
-      badges: ["Contract"],
+      badges: [],
       href: "",
       location: "Salt Lake City, UT",
-      title: "Principal Product Designer",
+      title: "Clinical Scheduling & Prescription Portal",
       logoUrl: "/Logos/intermountain health.webp",
       start: "07/2024",
       end: "07/2025",
-      description: `- **Led product design for the healthcare CRM platform**, introducing predictive scheduling driven by live patient traffic and historical trends to reduce scheduling friction and improve daily clinic flow.
-- **Designed and prototyped HIPAA-compliant, role-based dashboards in Figma**, built on a reusable component library, consolidating prescriptions, patient history, and medication alerts into one data-dense view that sped cross-team coordination.
-- **Partnered with clinical and engineering stakeholders** to meet strict compliance requirements without sacrificing usability.`,
+      description: `- Led product design for an AI-assisted scheduling and prescription portal, introducing predictive scheduling driven by live patient traffic and historical trends.
+- Consolidated prescriptions, patient history, and medication alerts into one HIPAA-compliant, role-based dashboard built on a reusable component library, working against clinical compliance review and engineering constraints.`,
     },
     {
-      company: "Bii Consulting",
+      company: "Bii Consulting (Senior UX/UI Designer)",
       href: "",
-      badges: ["Contract"],
+      badges: [],
       location: "Salt Lake City, UT",
-      title: "Senior UX/UI Designer",
+      title: "Carbon HRM Payroll Platform",
       logoUrl: "/Logos/bii consulting.jpg",
       start: "06/2024",
       end: "04/2025",
-      description: `- **Redesigned multi-campus payroll reporting workflows**, cutting processing time by 40% in the first eight weeks and enabling accurate, error-free payouts for 500+ staff.
-- **Designed and prototyped admin and employee dashboards on a shared Figma component library**, built for non-technical users across mobile and desktop and driving rapid adoption of the new system.
-- **Led user research with church administrators and staff**, translating insights into concrete features including PTO tracking, giving-based payroll automation, and role-based access controls.`,
+      description: `- Redesigned multi-campus payroll reporting workflows for a 500+ staff organization, consolidating reporting steps administrators had been completing by hand across separate systems.
+- Ran user research with church administrators and staff, turning findings into PTO tracking, giving-based payroll automation, and role-based access controls.`,
   },
     {
-      company: "State of Washington",
+      company: "State of Washington (via Unify Consulting)",
       href: "",
       badges: [],
       location: "Seattle, WA",
-      title: "Senior UX/UI Designer",
+      title: "Veterans Employment App",
       logoUrl: "/Logos/state of washington.svg",
       start: "08/2020",
       end: "01/2023",
-      description: `- **Designed a statewide veterans employment app** that centralized jobs, training programs, and local resources, reaching 500+ veterans across Washington and expanding access to support services.
-- **Led UX strategy and Figma prototyping** for a simple, accessible interface serving older adults and first-time smartphone users, driving strong engagement in pilot testing.
-- **Shipped in a three-month sprint**, coordinating with legal, accessibility, and engineering teams to meet state compliance requirements while keeping the experience user-first.`,
+      description: `- Designed a statewide veterans employment app centralizing jobs, training programs, and local resources, reaching 500+ veterans across Washington.
+- Shipped the accessible interface in a three-month sprint for older adults and first-time smartphone users, coordinating legal, accessibility, and engineering review to clear state compliance requirements.`,
     },
     // {
     //   company: "Mitre Media",
@@ -263,7 +262,7 @@ I specialize in clinical workflows, order management, AI-assisted tooling, and a
       dates: "June 2023 - Present",
       active: true,
       description:
-        "Designed and launched an AI-powered employee portal for scheduling and prescription access, improving task completion rates by 30% within the first 60 days of rollout across clinics.",
+        "Designed and launched an AI-powered employee portal for scheduling and prescription access.",
       technologies: [
         "Next.js",
         "Typescript",
