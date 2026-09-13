@@ -154,7 +154,7 @@ export function ImageSlideshow({
           size="sm"
           onClick={goToPrevious}
           aria-label={`Previous ${alt} screenshot`}
-          className={`absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white z-10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${arrowVisibility}`}
+          className={`absolute left-4 top-1/2 -translate-y-1/2 bg-black/45 hover:bg-black/60 text-white hover:text-white z-10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${arrowVisibility}`}
         >
           <ChevronLeft className="h-4 w-4" aria-hidden="true" />
         </Button>
@@ -164,7 +164,7 @@ export function ImageSlideshow({
           size="sm"
           onClick={goToNext}
           aria-label={`Next ${alt} screenshot`}
-          className={`absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white z-10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${arrowVisibility}`}
+          className={`absolute right-4 top-1/2 -translate-y-1/2 bg-black/45 hover:bg-black/60 text-white hover:text-white z-10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${arrowVisibility}`}
         >
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
         </Button>
@@ -182,7 +182,7 @@ export function ImageSlideshow({
               key={index}
               tabIndex={-1}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${
+              className={`w-2 h-2 rounded-full ring-1 ring-black/45 transition-colors ${
                 index === currentIndex
                   ? "bg-white"
                   : "bg-white/50 hover:bg-white/75"
@@ -194,7 +194,7 @@ export function ImageSlideshow({
         {/* Image counter */}
         <div
           aria-hidden="true"
-          className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded"
+          className="absolute top-2 right-2 bg-black/55 text-white text-xs px-2 py-1 rounded"
         >
           {currentIndex + 1} / {images.length}
         </div>

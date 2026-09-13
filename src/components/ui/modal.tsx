@@ -175,7 +175,7 @@ export function Modal({
                 {hasMultiple && (
                   <span
                     aria-hidden="true"
-                    className="shrink-0 rounded-full border border-border/60 bg-muted/50 px-2 py-0.5 font-mono text-[11px] tabular-nums text-muted-foreground"
+                    className="shrink-0 rounded-full border border-border/60 dark:bg-muted/50 px-2 py-0.5 font-mono text-[11px] tabular-nums text-muted-foreground"
                   >
                     {currentIndex + 1} / {images.length}
                   </span>

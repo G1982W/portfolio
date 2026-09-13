@@ -268,7 +268,7 @@ export default function Page() {
                 Don&apos;t hesitate to reach out to me{" "}
                 <Link
                   href={"mailto:mail@gregwalker.cc"}
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-600 underline dark:text-blue-400"
                 >
                   here
                 </Link>
