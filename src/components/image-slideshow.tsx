@@ -8,6 +8,8 @@ import { useMotionPreference } from "@/components/motion-preference";
 
 interface ImageSlideshowProps {
   images: readonly string[];
+  /** Per-image alt text; falls back to "<alt> - Image n of N". */
+  alts?: readonly string[];
   alt: string;
   width?: number;
   height?: number;
@@ -19,6 +21,7 @@ interface ImageSlideshowProps {
 
 export function ImageSlideshow({
   images,
+  alts,
   alt,
   width = 500,
   height = 300,
@@ -80,6 +83,14 @@ export function ImageSlideshow({
     announce(prev);
   };
 
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+    announce(index);
+  };
+
+  const altFor = (index: number) =>
+    alts?.[index] ?? `${alt} - Image ${index + 1} of ${images.length}`;
+
   if (!images || images.length === 0) {
     return null;
   }
@@ -88,7 +99,7 @@ export function ImageSlideshow({
     return (
       <Image
         src={images[0]}
-        alt={alt}
+        alt={alts?.[0] ?? alt}
         width={width}
         height={height}
         className={className}
@@ -131,7 +142,7 @@ export function ImageSlideshow({
       <div className="relative w-full h-full flex items-center justify-center">
         <Image
           src={images[currentIndex]}
-          alt={`${alt} - Image ${currentIndex + 1} of ${images.length}`}
+          alt={altFor(currentIndex)}
           width={width}
           height={height}
           className={className}
@@ -143,7 +154,7 @@ export function ImageSlideshow({
           size="sm"
           onClick={goToPrevious}
           aria-label={`Previous ${alt} screenshot`}
-          className={`absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white z-10 ${arrowVisibility}`}
+          className={`absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white z-10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${arrowVisibility}`}
         >
           <ChevronLeft className="h-4 w-4" aria-hidden="true" />
         </Button>
@@ -153,21 +164,28 @@ export function ImageSlideshow({
           size="sm"
           onClick={goToNext}
           aria-label={`Next ${alt} screenshot`}
-          className={`absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white z-10 ${arrowVisibility}`}
+          className={`absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white z-10 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${arrowVisibility}`}
         >
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
         </Button>
 
-        {/* Dots: a visual position indicator only; the arrows are the controls */}
+        {/* Dots: pointer shortcut to a slide. Kept out of the Tab order and
+            hidden from assistive tech; the arrows are the keyboard path. */}
         <div
           aria-hidden="true"
           className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-1"
         >
           {images.map((_, index) => (
-            <span
+            <button
+              type="button"
+              onMouseDown={(e) => e.preventDefault()}
               key={index}
+              tabIndex={-1}
+              onClick={() => goToSlide(index)}
               className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentIndex ? "bg-white" : "bg-white/50"
+                index === currentIndex
+                  ? "bg-white"
+                  : "bg-white/50 hover:bg-white/75"
               }`}
             />
           ))}

@@ -266,6 +266,18 @@ export const DATA = {
         "/Portfolio Links/Screens/Smyl Screens/m002.png",
         "/Portfolio Links/Screens/Smyl Screens/m003.png",
       ],
+      imageAlts: [
+        "Home dashboard with a clinic details panel and action cards for viewing the population, adding members, and screening.",
+        "Population list with a risk summary strip and a member table with search, filters, bulk actions, and pagination.",
+        "Add member side drawer with demographic, contact, health plan, and body measurement fields over the population list.",
+        "Provider detail page with a member risk summary sidebar and a filterable, sortable members table with risk badges.",
+        "Member screening results page with a profile sidebar, clinical recommendations, outcome tiles, and summary cards.",
+        "Staff management page with search, filter chips, and a grid of staff contact cards with role tags and edit links.",
+        "Mobile screen: workout program feed with a streak and points bar, photo program cards, a locked card, and a tab bar.",
+        "Mobile screen: onboarding tooltip explaining the daily points stat, shown over a dimmed workout program feed.",
+        "Mobile screen: setup complete dialog previewing the app menu with the profile item highlighted and a finish button.",
+        "Mobile screen: exercise activity view with a demo photo, start button, progress crowns, and a safety stop button.",
+      ],
       video: "",
     },
     {
@@ -302,6 +314,14 @@ export const DATA = {
         "/Portfolio Links/Screens/Costco Screens/004.png",
         "/Portfolio Links/Screens/Costco Screens/005.png",
         "/Portfolio Links/Screens/Costco Screens/006.png",
+      ],
+      imageAlts: [
+        "Item management dashboard with a feature banner, open quick search menu, metric cards, quick links and recent activity.",
+        "Advanced search form with catalog and warehouse selectors, removable filter chips, dropdown filters and recent searches.",
+        "Item search results table with a checkbox filter sidebar, export and refine actions, status badges and pagination.",
+        "Carrier and ship code table with one row expanded to a nested code table, plus create, export and pagination controls.",
+        "Edit carrier form with basic details, tracking site URL fields, a delivery eligibility table and an editable code table.",
+        "Add shipping code side panel with tabs, code and method fields, option checkboxes and cutoff time over the edit form.",
       ],
       video: "",
     },
@@ -340,6 +360,16 @@ export const DATA = {
         "/Portfolio Links/Screens/Intermountain Health/jpg/6-Group 4.jpg",
         "/Portfolio Links/Screens/Intermountain Health/jpg/7-Group 3.jpg",
         "/Portfolio Links/Screens/Intermountain Health/jpg/8-Group 2.jpg",
+      ],
+      imageAlts: [
+        "Clinician dashboard with stat cards, appointment requests, patient stats charts, a daily schedule and patients table.",
+        "Clinician profile settings page with a profile card, rating summary and a tabbed list of patient reviews.",
+        "Messaging screen with a searchable recent chat list and a conversation thread supporting attachments and voice notes.",
+        "Monitoring plan detail with consultation notes, a clinical summary, a trackers table and a patient vitals sidebar.",
+        "First step of a monitoring plan wizard with a plan name field, file upload area and aim field beside a patient sidebar.",
+        "Log consultation form with provider and patient lookups, a date picker, notes, attachments and follow-up actions.",
+        "Monitoring plan wizard step for selecting health trackers from a checklist table with reminder times and edit controls.",
+        "Patient list table with filters and row actions, overlaid by an add new patient modal with contact and reason fields.",
       ],
       video: "",
     },
@@ -382,7 +412,18 @@ export const DATA = {
         "/Portfolio Links/Screens/CarbonHRM/5.png",
         "/Portfolio Links/Screens/CarbonHRM/6.png",
       ],
+      imageAlts: [
+        "Employee dashboard with a profile card, pay and leave balance tiles, direct reports, holidays, and time-off history.",
+        "Team time-away calendar in month view with color-coded leave type filters and multi-day absence bars.",
+        "New hire onboarding tracker table with progress indicators and an expanded row showing checklist steps.",
+        "Timesheet review table grouped by employee with a bulk action toolbar and an expanded row of weekly hours.",
+        "Alternate employee dashboard layout with profile card, pay summary, leave balances, holidays, and time-off history.",
+        "Employee directory table with a search bar, avatars, contact icons, and department, location, and manager columns.",
+      ],
       video: "/Portfolio Links/CarbonHRM.mp4",
+      videoLabel: "Carbon HRM website walkthrough",
+      videoDescription:
+        "A browser window scrolls down the Carbon HRM marketing site, starting at a hero headline with a waitlist sign-up form. A product preview of the employee dashboard comes into view, with a profile card, pay summary, time-off balances, a holiday list and a time-off history table. Scrolling continues to a feature section pairing descriptive text with a photo.",
     },
     {
       title: "BlakeUI",
@@ -418,6 +459,9 @@ export const DATA = {
       image: "",
       images: [],
       video: "/Portfolio Links/BlakeUI.mp4",
+      videoLabel: "BlakeUI component library walkthrough",
+      videoDescription:
+        "A browser window shows the BlakeUI landing page, with a hero headline, a call-to-action button and a sample dashboard built from the library's components. The page scrolls past the dashboard's chart, calendar and data table to a pricing section with plan cards, then back up. The embedded dashboard then scrolls on its own, revealing the full table, a monthly activity calendar and bar and scatter chart cards.",
     },  
     {
       title: "AskBlake",
@@ -446,6 +490,9 @@ export const DATA = {
       image: "",
       images: [],
       video: "/Portfolio Links/askblake.mp4",
+      videoLabel: "AskBlake prompt-to-code demo",
+      videoDescription:
+        "A dark AskBlake landing page shows a headline and a single prompt field, and a request is typed in and submitted. The view switches to a three-panel workspace with a project file explorer, a code editor and a chat panel. While the assistant shows a generating status, files appear in the explorer and code streams into the editor line by line.",
     }, 
     {
       title: "blakebill",
@@ -480,6 +527,9 @@ export const DATA = {
       image: "",
       images: [],
       video: "/Portfolio Links/blakebill.mp4",
+      videoLabel: "blakebill file upload demo",
+      videoDescription:
+        "The blakebill file-sharing homepage shows an illustrated background and an upload card with a drag-and-drop area and a browse button. The view zooms in as the browse button is clicked, a system file picker opens, and several files are selected and opened. The upload card then lists the files with progress bars, alongside an email option, a payment checkout dropdown and a send button.",
     },
     {
       title: "Thatch",
@@ -524,6 +574,14 @@ export const DATA = {
         // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/Inventory Allocated Detailed VIEW - Purchase Order-Shipped - Confirm Payment.jpg",
         // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/Split Pay.jpg",
       ],
+      imageAlts: [
+        "Product editor with general info, image upload and specs beside pricing, a variants table and collapsible settings.",
+        "Thatch sales dashboard with KPI cards, a goal tracker, trend chart, inventory rings, a donut chart and orders table.",
+        "Split-screen inventory allocation tool: retailer stock tables with a sort menu beside an editable new allocation order.",
+        "Messaging workspace with channel lists, a chat thread and composer, beside a retailer's product sales tables.",
+        "Inventory allocation detail with vendor info, order totals, shipping fields and notes beside itemized product tables.",
+        "Allocation history list with status filter tabs, a search field and a sortable table of orders and their statuses.",
+      ],
       video: "",
     },
     {
@@ -554,6 +612,9 @@ export const DATA = {
       image: "",
       images: [],
       video: "/Portfolio Links/OrizonEnergy.mp4",
+      videoLabel: "Orizon Energy website walkthrough",
+      videoDescription:
+        "The Orizon Energy website opens on a dark loading screen with the logo and a tagline, then a diagonal wipe reveals a hero section over aerial footage of a residential neighborhood. The hero has a navigation bar with a quote button, a headline, an intro paragraph and two call-to-action tiles. Scrolling down shows a grid of partner logos, then a section with a headline, supporting text, a button and a vertical checklist of solar benefits.",
     },
     // {
     //   title: "Kept by Safe Home Security",

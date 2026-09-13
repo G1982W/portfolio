@@ -15,7 +15,7 @@ import Markdown from "react-markdown";
 import { ImageSlideshow } from "@/components/image-slideshow";
 import { useMotionPreference } from "@/components/motion-preference";
 import { Modal } from "@/components/ui/modal";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 interface Props {
   title: string;
@@ -26,7 +26,12 @@ interface Props {
   link?: string;
   image?: string;
   images?: readonly string[];
+  /** Per-screenshot alt text, in the same order as `images`. */
+  imageAlts?: readonly string[];
   video?: string;
+  /** Accessible name and text description for the silent video (1.2.1). */
+  videoLabel?: string;
+  videoDescription?: string;
   links?:
     | readonly {
         icon: React.ReactNode;
@@ -39,7 +44,8 @@ interface Props {
   onScreenClick?: (
     images: readonly string[],
     title: string,
-    trigger: HTMLElement
+    trigger: HTMLElement,
+    imageAlts?: readonly string[]
   ) => void;
 }
 
@@ -52,7 +58,10 @@ export function ProjectCard({
   link,
   image,
   images,
+  imageAlts,
   video,
+  videoLabel,
+  videoDescription,
   links,
   label,
   className,
@@ -60,6 +69,7 @@ export function ProjectCard({
 }: Props) {
   const { paused: motionPaused, resolved } = useMotionPreference();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoDescriptionId = useId();
 
   // Playback follows the site-wide "Pause motion" switch (WCAG 2.2.2).
   useEffect(() => {
@@ -87,12 +97,20 @@ export function ProjectCard({
             muted
             playsInline
             preload="auto"
+            aria-label={videoLabel}
+            aria-describedby={videoDescription ? videoDescriptionId : undefined}
             className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
           />
+        )}
+        {video && videoDescription && (
+          <p id={videoDescriptionId} hidden>
+            {videoDescription}
+          </p>
         )}
         {images && images.length > 0 && !video ? (
           <ImageSlideshow
             images={images}
+            alts={imageAlts}
             alt={title}
             width={500}
             height={300}
@@ -149,10 +167,10 @@ export function ProjectCard({
                     type="button"
                     key={idx}
                     onClick={(e) =>
-                      onScreenClick?.(images, title, e.currentTarget)
+                      onScreenClick?.(images, title, e.currentTarget, imageAlts)
                     }
                     aria-label={`Screen: view ${title} screenshots`}
-                    className="items-left rounded-md border font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px] cursor-pointer"
+                    className="items-left rounded-md border font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px] cursor-pointer"
                   >
                     {link.icon}
                     {link.type}
@@ -162,7 +180,12 @@ export function ProjectCard({
 
               if (link.type === "Website") {
                 return (
-                  <Link href={link?.href} key={idx} target="_blank">
+                  <Link
+                    href={link?.href}
+                    key={idx}
+                    target="_blank"
+                    aria-label={`${title} website`}
+                  >
                     <Badge
                       key={idx}
                       className="flex gap-2 px-2 py-1 text-[10px]"

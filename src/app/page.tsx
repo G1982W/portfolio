@@ -10,6 +10,7 @@ import {
 } from "@/components/motion-preference";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
+import { SkipLink } from "@/components/skip-link";
 import { Modal } from "@/components/ui/modal";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
@@ -22,13 +23,16 @@ export default function Page() {
   const [modalImages, setModalImages] = useState<readonly string[]>([]);
   const [modalTitle, setModalTitle] = useState("");
   const [modalTrigger, setModalTrigger] = useState<HTMLElement | null>(null);
+  const [modalAlts, setModalAlts] = useState<readonly string[] | undefined>();
 
   const handleScreenClick = (
     images: readonly string[],
     title: string,
-    trigger: HTMLElement
+    trigger: HTMLElement,
+    imageAlts?: readonly string[]
   ) => {
     setModalImages(images);
+    setModalAlts(imageAlts);
     setModalTitle(title);
     setModalTrigger(trigger);
     setIsModalOpen(true);
@@ -36,7 +40,8 @@ export default function Page() {
 
   return (
     <MotionPreferenceProvider>
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <SkipLink />
+    <main id="main" className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -189,7 +194,14 @@ export default function Page() {
                   dates={project.dates}
                   tags={project.technologies}
                   images={project.images}
+                  imageAlts={"imageAlts" in project ? project.imageAlts : undefined}
                   video={project.video}
+                  videoLabel={"videoLabel" in project ? project.videoLabel : undefined}
+                  videoDescription={
+                    "videoDescription" in project
+                      ? project.videoDescription
+                      : undefined
+                  }
                   links={project.links || undefined}
                   label={"label" in project ? project.label : undefined}
                   onScreenClick={handleScreenClick}
@@ -272,6 +284,7 @@ export default function Page() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         images={modalImages}
+        alts={modalAlts}
         title={modalTitle}
         returnFocusTo={modalTrigger}
       />

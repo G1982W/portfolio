@@ -10,6 +10,8 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   images: readonly string[];
+  /** Per-image alt text, in the same order as `images`. */
+  alts?: readonly string[];
   title: string;
   /** Element to return focus to when the gallery closes (the Screen button). */
   returnFocusTo?: HTMLElement | null;
@@ -22,6 +24,7 @@ export function Modal({
   isOpen,
   onClose,
   images,
+  alts,
   title,
   returnFocusTo,
 }: ModalProps) {
@@ -237,7 +240,10 @@ export function Modal({
                   <div className="relative h-full w-full">
                     <Image
                       src={images[currentIndex]}
-                      alt={`${title} — image ${currentIndex + 1} of ${images.length}`}
+                      alt={
+                        alts?.[currentIndex] ??
+                        `${title} — image ${currentIndex + 1} of ${images.length}`
+                      }
                       fill
                       sizes="(max-width: 768px) 90vw, 80vw"
                       className="object-contain drop-shadow-2xl"

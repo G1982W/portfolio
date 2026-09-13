@@ -1,4 +1,5 @@
 import { getBlogPosts, getPost } from "@/data/blog";
+import { SkipLink } from "@/components/skip-link";
 import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -65,6 +66,9 @@ export default async function Blog({
   }
 
   return (
+    <>
+    <SkipLink />
+    <main id="main">
     <section id="blog">
       <script
         type="application/ld+json"
@@ -103,5 +107,7 @@ export default async function Blog({
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
     </section>
+    </main>
+    </>
   );
 }
