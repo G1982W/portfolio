@@ -234,6 +234,19 @@ const StyledWrapper = styled.div`
     transition: transform 0.3s ease;
   }
 
+  /* Light theme: a 1px keyline outlines the sun (1.4.11). By colour value it
+     is 3.58:1 against the sky and 7.34:1 against the sun. Not applied while
+     the switch is checked (dark theme), where the moon fills this circle. */
+  .theme-switch__checkbox:not(:checked)
+    + .theme-switch__container
+    .theme-switch__sun-moon-container {
+    -webkit-box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61)
+        inset,
+      0em -0.062em 0.062em 0em #a1872a inset, 0 0 0 1px #1d3a52;
+    box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
+      0em -0.062em 0.062em 0em #a1872a inset, 0 0 0 1px #1d3a52;
+  }
+
   .theme-switch__sun-moon-container:hover {
     transform: scale(1.1) rotate(5deg);
   }
