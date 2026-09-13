@@ -75,6 +75,49 @@
   }
 }
 
+/* Reduced motion (WCAG 2.3.3). Pure CSS so it applies before any script runs.
+   - Transitions are near-instant everywhere.
+   - CSS animations run to their static state, unless the visitor has turned
+     motion back on with the "Pause motion" switch (html[data-motion=running]).
+   - .motion-reveal: framer-motion entrances (BlurFade) are visible immediately;
+     their inline start styles (opacity 0, blur, offset) are overridden.
+   - .motion-collapse: disclosure panels are simply open or closed. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  :root:not([data-motion="running"]) *,
+  :root:not([data-motion="running"]) *::before,
+  :root:not([data-motion="running"]) *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .motion-reveal {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+
+  .motion-collapse[data-state="open"] {
+    height: auto !important;
+    opacity: 1 !important;
+  }
+
+  .motion-collapse[data-state="closed"] {
+    height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+}
+
 h3 code {
   @apply !text-lg md:!text-xl;
 }

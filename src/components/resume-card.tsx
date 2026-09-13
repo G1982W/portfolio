@@ -118,6 +118,7 @@ export const ResumeCard = ({
           <motion.div
             id={descriptionId}
             aria-hidden={!isExpanded}
+            data-state={isExpanded ? "open" : "closed"}
             initial={{ opacity: 0, height: 0 }}
             animate={{
               opacity: isExpanded ? 1 : 0,
@@ -128,7 +129,7 @@ export const ResumeCard = ({
               duration: 0.7,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="mt-2"
+            className="motion-collapse mt-2"
           >
             <Markdown className="prose max-w-full text-pretty font-sans text-xs sm:text-sm text-muted-foreground dark:prose-invert">
               {description}

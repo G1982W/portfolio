@@ -53,7 +53,7 @@ const BlurFadeText = ({
                 delay: delay + i * characterDelay,
                 ease: "easeOut",
               }}
-              className={cn("inline-block", className)}
+              className={cn("motion-reveal inline-block", className)}
               style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
             >
               {char}
@@ -77,7 +77,7 @@ const BlurFadeText = ({
             delay,
             ease: "easeOut",
           }}
-          className={cn("inline-block", className)}
+          className={cn("motion-reveal inline-block", className)}
         >
           {text}
         </motion.span>

@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 
@@ -52,7 +53,7 @@ const BlurFade = ({
           duration,
           ease: "easeOut",
         }}
-        className={className}
+        className={cn("motion-reveal", className)}
       >
         {children}
       </motion.div>

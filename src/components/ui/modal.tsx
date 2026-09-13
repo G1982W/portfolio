@@ -146,7 +146,7 @@ export function Modal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-background/70 backdrop-blur-xl"
+            className="motion-reveal absolute inset-0 bg-background/70 backdrop-blur-xl"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -161,7 +161,7 @@ export function Modal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 16 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 flex flex-col w-full max-w-5xl h-[85vh] max-h-[860px] overflow-hidden rounded-2xl border border-border/60 bg-background shadow-2xl shadow-black/20 ring-1 ring-foreground/5"
+            className="motion-reveal relative z-10 flex flex-col w-full max-w-5xl h-[85vh] max-h-[860px] overflow-hidden rounded-2xl border border-border/60 bg-background shadow-2xl shadow-black/20 ring-1 ring-foreground/5"
           >
             {/* Header */}
             <div className="flex shrink-0 items-center justify-between gap-3 border-b border-border/50 bg-background/60 px-5 py-3.5 backdrop-blur">
@@ -235,7 +235,7 @@ export function Modal({
                     scale: 0.98,
                   }}
                   transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative flex h-full w-full items-center justify-center"
+                  className="motion-reveal relative flex h-full w-full items-center justify-center"
                 >
                   <div className="relative h-full w-full">
                     <Image

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { MotionConfig } from "framer-motion";
 import React, {
   createContext,
   useCallback,
@@ -74,7 +75,9 @@ export function MotionPreferenceProvider({
 
   return (
     <MotionPreferenceContext.Provider value={{ paused, resolved, setPaused }}>
-      {children}
+      {/* framer-motion skips transform/layout animation for reduced-motion
+          users; CSS in globals.css covers what renders before hydration. */}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </MotionPreferenceContext.Provider>
   );
 }
