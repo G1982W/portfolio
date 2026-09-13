@@ -34,8 +34,9 @@ export const DATA = {
       items: [
         "Design tokens",
         "component libraries",
-        "ShadCN",
+        "React Aria",
         "Radix UI",
+        "ShadCN",
         "Tailwind UI",
         "Material Design",
       ],
@@ -389,7 +390,7 @@ export const DATA = {
       dates: "Feb 2026 - present",
       active: true,
       description:
-        "Open-source React component library on ShadCN and Tailwind CSS, with a paid accessibility-first Pro tier.",
+        "Accessible open-source React component library built on React Aria and Tailwind CSS, with a paid Pro tier.",
       technologies: [
         "Next.js",
         "React",
@@ -397,7 +398,7 @@ export const DATA = {
         "TailwindCSS",
         "Supabase",
         "Stripe",
-        "Shadcn UI",
+        "React Aria",
         "Radix UI",
         "Fumadocs",
         "Framer Motion",
