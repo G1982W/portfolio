@@ -61,7 +61,9 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        {/* Follows the OS light/dark setting, live, until the visitor picks a
+            theme with the toggle; that choice is kept in localStorage. */}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider delayDuration={0}>
             {children}
             {/* <Navbar /> */}
