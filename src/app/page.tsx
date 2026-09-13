@@ -59,14 +59,9 @@ export default function Page() {
                 text={DATA.description}
               />
             </div>
-            <div className="flex flex-col items-end gap-2">
-              <BlurFade delay={BLUR_FADE_DELAY}>
-                <ModeToggle />
-              </BlurFade>
-              <BlurFade delay={BLUR_FADE_DELAY}>
-                <PauseMotionSwitch />
-              </BlurFade>
-            </div>
+            <BlurFade delay={BLUR_FADE_DELAY}>
+              <ModeToggle />
+            </BlurFade>
           </div>
         </div>
       </section>
@@ -274,6 +269,10 @@ export default function Page() {
                 </Link>
                 , and I will get back to you as soon as possible.
               </p>
+              {/* Stops autoplaying media and looping animations (WCAG 2.2.2). */}
+              <div className="pt-2">
+                <PauseMotionSwitch />
+              </div>
             </div>
           </BlurFade>
         </div>
