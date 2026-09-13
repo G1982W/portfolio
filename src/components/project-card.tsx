@@ -13,8 +13,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { ImageSlideshow } from "@/components/image-slideshow";
+import { useMotionPreference } from "@/components/motion-preference";
 import { Modal } from "@/components/ui/modal";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   title: string;
@@ -35,7 +36,11 @@ interface Props {
     | undefined;
   label?: string;
   className?: string;
-  onScreenClick?: (images: readonly string[], title: string) => void;
+  onScreenClick?: (
+    images: readonly string[],
+    title: string,
+    trigger: HTMLElement
+  ) => void;
 }
 
 export function ProjectCard({
@@ -53,6 +58,20 @@ export function ProjectCard({
   className,
   onScreenClick,
 }: Props) {
+  const { paused: motionPaused, resolved } = useMotionPreference();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Playback follows the site-wide "Pause motion" switch (WCAG 2.2.2).
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el || !resolved) return;
+    if (motionPaused) {
+      el.pause();
+    } else {
+      el.play().catch(() => {});
+    }
+  }, [motionPaused, resolved, video]);
+
   return (
     <Card
       className={
@@ -62,11 +81,12 @@ export function ProjectCard({
       <div className={cn("block cursor-pointer")}>
         {video && (
           <video
+            ref={videoRef}
             src={video}
-            autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
           />
         )}
@@ -125,14 +145,18 @@ export function ProjectCard({
             {links?.map((link, idx) => {
               if (link.type === "Screen" && images && images.length > 0) {
                 return (
-                  <div
+                  <button
+                    type="button"
                     key={idx}
-                    onClick={() => onScreenClick?.(images, title)}
-                    className="items-left rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px] cursor-pointer"
+                    onClick={(e) =>
+                      onScreenClick?.(images, title, e.currentTarget)
+                    }
+                    aria-label={`Screen: view ${title} screenshots`}
+                    className="items-left rounded-md border font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px] cursor-pointer"
                   >
                     {link.icon}
                     {link.type}
-                  </div>
+                  </button>
                 );
               }
 

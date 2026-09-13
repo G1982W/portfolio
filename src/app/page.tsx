@@ -4,6 +4,10 @@ import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ModeToggle } from "@/components/mode-toggle";
+import {
+  MotionPreferenceProvider,
+  PauseMotionSwitch,
+} from "@/components/motion-preference";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Modal } from "@/components/ui/modal";
@@ -17,20 +21,28 @@ export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState<readonly string[]>([]);
   const [modalTitle, setModalTitle] = useState("");
+  const [modalTrigger, setModalTrigger] = useState<HTMLElement | null>(null);
 
-  const handleScreenClick = (images: readonly string[], title: string) => {
+  const handleScreenClick = (
+    images: readonly string[],
+    title: string,
+    trigger: HTMLElement
+  ) => {
     setModalImages(images);
     setModalTitle(title);
+    setModalTrigger(trigger);
     setIsModalOpen(true);
   };
 
   return (
+    <MotionPreferenceProvider>
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFadeText
+                as="h1"
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
@@ -42,9 +54,14 @@ export default function Page() {
                 text={DATA.description}
               />
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <ModeToggle />
-            </BlurFade>
+            <div className="flex flex-col items-end gap-2">
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <ModeToggle />
+              </BlurFade>
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <PauseMotionSwitch />
+              </BlurFade>
+            </div>
           </div>
         </div>
       </section>
@@ -256,7 +273,9 @@ export default function Page() {
         onClose={() => setIsModalOpen(false)}
         images={modalImages}
         title={modalTitle}
+        returnFocusTo={modalTrigger}
       />
     </main>
+    </MotionPreferenceProvider>
   );
 }

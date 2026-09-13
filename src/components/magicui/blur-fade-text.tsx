@@ -7,6 +7,8 @@ import { ModeToggle } from "../mode-toggle";
 
 interface BlurFadeTextProps {
   text: string;
+  /** Element for the wrapper, e.g. "h1" when the text is the page heading. */
+  as?: "div" | "h1";
   className?: string;
   variant?: {
     hidden: { y: number };
@@ -20,6 +22,7 @@ interface BlurFadeTextProps {
 }
 const BlurFadeText = ({
   text,
+  as: Wrapper = "div",
   className,
   variant,
   characterDelay = 0.03,
@@ -62,7 +65,7 @@ const BlurFadeText = ({
   }
 
   return (
-    <div className="flex">
+    <Wrapper className="flex">
       <AnimatePresence>
         <motion.span
           initial="hidden"
@@ -80,7 +83,7 @@ const BlurFadeText = ({
         </motion.span>
       </AnimatePresence>
       {/* <ModeToggle /> */}
-    </div>
+    </Wrapper>
   );
 };
 

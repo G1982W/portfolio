@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useId, useRef } from "react";
+import { createPortal } from "react-dom";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -10,31 +11,55 @@ interface ModalProps {
   onClose: () => void;
   images: readonly string[];
   title: string;
+  /** Element to return focus to when the gallery closes (the Screen button). */
+  returnFocusTo?: HTMLElement | null;
 }
 
-export function Modal({ isOpen, onClose, images, title }: ModalProps) {
+const FOCUSABLE =
+  'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+export function Modal({
+  isOpen,
+  onClose,
+  images,
+  title,
+  returnFocusTo,
+}: ModalProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [announcement, setAnnouncement] = useState("");
+  const [mounted, setMounted] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
+
+  useEffect(() => setMounted(true), []);
 
   const goNext = useCallback(() => {
+    const next = (currentIndex + 1) % images.length;
     setDirection(1);
-    setCurrentIndex((i) => (i + 1) % images.length);
-  }, [images.length]);
+    setCurrentIndex(next);
+    setAnnouncement(`Screenshot ${next + 1} of ${images.length}`);
+  }, [currentIndex, images.length]);
 
   const goPrev = useCallback(() => {
+    const prev = (currentIndex - 1 + images.length) % images.length;
     setDirection(-1);
-    setCurrentIndex((i) => (i - 1 + images.length) % images.length);
-  }, [images.length]);
+    setCurrentIndex(prev);
+    setAnnouncement(`Screenshot ${prev + 1} of ${images.length}`);
+  }, [currentIndex, images.length]);
 
   // Reset to first image whenever modal opens
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(0);
       setDirection(0);
+      setAnnouncement("");
     }
   }, [isOpen]);
 
-  // Keyboard navigation
+  // Keyboard navigation, focus containment and scroll lock
   useEffect(() => {
     if (!isOpen) return;
 
@@ -42,6 +67,26 @@ export function Modal({ isOpen, onClose, images, title }: ModalProps) {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowRight") goNext();
       if (e.key === "ArrowLeft") goPrev();
+      if (e.key === "Tab" && dialogRef.current) {
+        const focusable = Array.from(
+          dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE)
+        );
+        if (focusable.length === 0) {
+          e.preventDefault();
+          return;
+        }
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        const active = document.activeElement;
+        const inside = dialogRef.current.contains(active);
+        if (e.shiftKey && (active === first || !inside)) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && (active === last || !inside)) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
 
     document.addEventListener("keydown", handleKey);
@@ -53,12 +98,42 @@ export function Modal({ isOpen, onClose, images, title }: ModalProps) {
     };
   }, [isOpen, onClose, goNext, goPrev]);
 
+  // Move focus into the dialog, make the page behind it inert, and return
+  // focus to the trigger when it closes.
+  useEffect(() => {
+    if (!isOpen || !mounted) return;
+    const returnTo =
+      returnFocusTo ?? (document.activeElement as HTMLElement | null);
+    const root = rootRef.current;
+    const inerted: Element[] = [];
+    Array.from(document.body.children).forEach((child) => {
+      if (child === root || child.tagName === "SCRIPT") return;
+      if (child.hasAttribute("inert")) return;
+      child.setAttribute("inert", "");
+      inerted.push(child);
+    });
+    const frame = requestAnimationFrame(() =>
+      closeRef.current?.focus({ preventScroll: true })
+    );
+
+    return () => {
+      cancelAnimationFrame(frame);
+      inerted.forEach((el) => el.removeAttribute("inert"));
+      if (returnTo && document.contains(returnTo)) {
+        returnTo.focus({ preventScroll: true });
+      }
+    };
+  }, [isOpen, mounted, returnFocusTo]);
+
+  if (!mounted) return null;
+
   const hasMultiple = images.length > 1;
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <div
+          ref={rootRef}
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
           style={{ marginTop: 0 }}
         >
@@ -75,6 +150,10 @@ export function Modal({ isOpen, onClose, images, title }: ModalProps) {
 
           {/* Modal card */}
           <motion.div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={titleId}
             initial={{ opacity: 0, scale: 0.96, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 16 }}
@@ -84,22 +163,32 @@ export function Modal({ isOpen, onClose, images, title }: ModalProps) {
             {/* Header */}
             <div className="flex shrink-0 items-center justify-between gap-3 border-b border-border/50 bg-background/60 px-5 py-3.5 backdrop-blur">
               <div className="flex items-center gap-3 min-w-0">
-                <h2 className="truncate text-sm font-semibold tracking-tight text-foreground">
+                <h2
+                  id={titleId}
+                  className="truncate text-sm font-semibold tracking-tight text-foreground"
+                >
                   {title}
                 </h2>
                 {hasMultiple && (
-                  <span className="shrink-0 rounded-full border border-border/60 bg-muted/50 px-2 py-0.5 font-mono text-[11px] tabular-nums text-muted-foreground">
+                  <span
+                    aria-hidden="true"
+                    className="shrink-0 rounded-full border border-border/60 bg-muted/50 px-2 py-0.5 font-mono text-[11px] tabular-nums text-muted-foreground"
+                  >
                     {currentIndex + 1} / {images.length}
                   </span>
                 )}
+                <span className="sr-only" aria-live="polite" aria-atomic="true">
+                  {announcement}
+                </span>
               </div>
 
               <button
+                ref={closeRef}
                 onClick={onClose}
                 aria-label="Close"
                 className="group flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                <X className="h-4 w-4" />
+                <X className="h-4 w-4" aria-hidden="true" />
               </button>
             </div>
 
@@ -122,7 +211,7 @@ export function Modal({ isOpen, onClose, images, title }: ModalProps) {
                   aria-label="Previous image"
                   className="absolute left-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/60 bg-background/80 text-muted-foreground shadow-sm backdrop-blur transition-all hover:scale-105 hover:border-border hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 sm:left-5"
                 >
-                  <ChevronLeft className="h-5 w-5" />
+                  <ChevronLeft className="h-5 w-5" aria-hidden="true" />
                 </button>
               )}
 
@@ -165,13 +254,14 @@ export function Modal({ isOpen, onClose, images, title }: ModalProps) {
                   aria-label="Next image"
                   className="absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/60 bg-background/80 text-muted-foreground shadow-sm backdrop-blur transition-all hover:scale-105 hover:border-border hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-95 sm:right-5"
                 >
-                  <ChevronRight className="h-5 w-5" />
+                  <ChevronRight className="h-5 w-5" aria-hidden="true" />
                 </button>
               )}
             </div>
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

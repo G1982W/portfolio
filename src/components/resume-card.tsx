@@ -33,22 +33,31 @@ export const ResumeCard = ({
   defaultExpanded = false,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(defaultExpanded);
+  const descriptionId = React.useId();
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if (description) {
       e.preventDefault();
-      // A drag to select bullet text ends in a click; don't toggle on it.
-      if (window.getSelection()?.toString()) return;
+      // A mouse drag that selects text inside this card ends in a click;
+      // don't toggle on it. Keyboard clicks (detail 0) and clicks on the
+      // heading button always toggle.
+      const selection = window.getSelection();
+      const onButton = (e.target as Element).closest("button") !== null;
+      if (
+        e.detail !== 0 &&
+        !onButton &&
+        selection?.toString() &&
+        e.currentTarget.contains(selection.anchorNode)
+      ) {
+        return;
+      }
       setIsExpanded(!isExpanded);
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
-    if (description && (e.key === "Enter" || e.key === " ")) {
-      e.preventDefault();
-      setIsExpanded(!isExpanded);
-    }
-  };
+  // Cards without a URL expose a real disclosure button in the heading; the
+  // whole card stays clickable because the button's click bubbles up.
+  const disclosure = Boolean(description) && !href;
 
   const card = (
     <Card className="flex">
@@ -66,7 +75,18 @@ export const ResumeCard = ({
         <CardHeader>
           <div className="flex items-center justify-between gap-x-2 text-base">
             <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
-              {title}
+              {disclosure ? (
+                <button
+                  type="button"
+                  aria-expanded={isExpanded}
+                  aria-controls={descriptionId}
+                  className="text-left focus-visible:outline-none"
+                >
+                  {title}
+                </button>
+              ) : (
+                title
+              )}
               {badges && (
                 <span className="inline-flex gap-x-1">
                   {badges.map((badge, index) => (
@@ -81,6 +101,7 @@ export const ResumeCard = ({
                 </span>
               )}
               <ChevronRightIcon
+                aria-hidden="true"
                 className={cn(
                   "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
                   isExpanded ? "rotate-90" : "rotate-0"
@@ -95,6 +116,8 @@ export const ResumeCard = ({
         </CardHeader>
         {description && (
           <motion.div
+            id={descriptionId}
+            aria-hidden={!isExpanded}
             initial={{ opacity: 0, height: 0 }}
             animate={{
               opacity: isExpanded ? 1 : 0,
@@ -124,16 +147,12 @@ export const ResumeCard = ({
     );
   }
 
-  // No URL: render no link element. Keep the same classes and the
-  // click/keyboard expand behavior the "#" anchor used to provide.
+  // No URL: render no link element. The heading button carries keyboard
+  // access and state; the card shows the focus ring while it is focused.
   return (
     <div
-      className="block cursor-pointer"
+      className="block cursor-pointer rounded-lg has-[button:focus-visible]:outline has-[button:focus-visible]:outline-2 has-[button:focus-visible]:outline-offset-2 has-[button:focus-visible]:outline-ring"
       onClick={handleClick}
-      onKeyDown={description ? handleKeyDown : undefined}
-      role={description ? "button" : undefined}
-      tabIndex={description ? 0 : undefined}
-      aria-expanded={description ? isExpanded : undefined}
     >
       {card}
     </div>

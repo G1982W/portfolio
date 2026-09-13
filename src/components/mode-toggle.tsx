@@ -1,18 +1,32 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import styled from "styled-components";
 
 export const ModeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  // The server can't know the theme, so the checkbox renders unchecked there.
+  // Set its state only after mount so the DOM property always gets updated.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const isDark = mounted && resolvedTheme === "dark";
   return (
     <StyledWrapper>
       <label className="theme-switch">
         <input
           className="theme-switch__checkbox"
-          checked={theme === "dark"}
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           type="checkbox"
+          role="switch"
+          aria-label="Dark mode"
+          checked={isDark}
+          onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+          onKeyDown={(e) => {
+            // Checkboxes toggle on Space natively; switches also accept Enter.
+            if (e.key === "Enter") {
+              e.preventDefault();
+              setTheme(isDark ? "light" : "dark");
+            }
+          }}
         />
         <div className="theme-switch__container">
           <div className="theme-switch__clouds" />
@@ -133,8 +147,40 @@ const StyledWrapper = styled.div`
     border-radius: var(--container-radius);
   }
 
+  /* Visually hidden but focusable, so the switch works by keyboard. */
   .theme-switch__checkbox {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+  }
+
+  .theme-switch__checkbox:focus-visible + .theme-switch__container {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Looping decorations follow the site-wide "Pause motion" switch, and stay
+     paused for reduced-motion users until they turn motion back on. */
+  :root[data-motion="paused"] & .theme-switch *,
+  :root[data-motion="paused"] & .theme-switch *::before,
+  :root[data-motion="paused"] & .theme-switch *::after {
+    animation-play-state: paused !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root:not([data-motion="running"]) & .theme-switch *,
+    :root:not([data-motion="running"]) & .theme-switch *::before,
+    :root:not([data-motion="running"]) & .theme-switch *::after {
+      animation-play-state: paused !important;
+    }
   }
 
   .theme-switch__circle-container {
