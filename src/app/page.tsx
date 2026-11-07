@@ -18,6 +18,8 @@ import Markdown from "react-markdown";
 import { useState } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
+// Joins the last two words with a non-breaking space so a line never ends in a single orphaned word.
+const noOrphan = (text: string) => text.replace(/high-complexity/g, "high\u2011complexity").replace(/\s+(\S+)$/, "\u00A0$1");
 const FOUNDER_TITLES = ["AskBlake", "blakebill", "BlakeUI"];
 const CLIENT_TITLES = ["Costco", "Intermountain Health", "Smyl Fitness", "Carbon HRM"];
 export default function Page() {
@@ -46,8 +48,8 @@ export default function Page() {
     <main id="main" className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
+          <div className="space-y-4">
+            <div className="gap-2 flex items-start justify-between">
               <BlurFadeText
                 as="h1"
                 delay={BLUR_FADE_DELAY}
@@ -55,15 +57,15 @@ export default function Page() {
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <ModeToggle />
+              </BlurFade>
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <ModeToggle />
-            </BlurFade>
+            <BlurFadeText
+              className="w-full max-w-none text-pretty md:text-xl"
+              delay={BLUR_FADE_DELAY}
+              text={noOrphan(DATA.description)}
+            />
           </div>
         </div>
       </section>
