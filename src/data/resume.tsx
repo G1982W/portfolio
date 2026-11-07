@@ -221,23 +221,7 @@ export const DATA = {
       active: true,
       description:
         "Minute Moves, a mobile fitness app for older adults, plus Smyl Insight, the clinical CRM now in use at 5+ Chicago-area hospitals.",
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "Supabase",
-        "Stripe",
-        "Shadcn UI",
-        "Radix UI",
-        "Fumadocs",
-        "Framer Motion",
-        "Zustand",
-        "React Hook Form + Zod",
-        "TanStack Table",
-        "Recharts",
-        "Lucide Icons",
-      ],
+      technologies: [],
       links: [
         {
           type: "Website",
@@ -285,17 +269,7 @@ export const DATA = {
       description:
         "Unified item, order, and vendor lookup into one search interface, removing the manual workarounds buyers had built across separate screens.",
       label: "Internal tool - walkthrough available on request",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
+      technologies: [],
       links: [
         {
           type: "Screen",
@@ -330,16 +304,7 @@ export const DATA = {
       description:
         "AI-powered scheduling and prescription portal with predictive scheduling driven by live patient traffic and historical trends.",
       label: "Internal tool - walkthrough available on request",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+      technologies: [],
       links: [
         {
           type: "Screen",
@@ -377,17 +342,7 @@ export const DATA = {
       active: true,
       description:
         "Payroll reporting workflow for a multi-campus organization of 500+ staff.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
+      technologies: [],
       links: [
         {
           type: "Website",
@@ -527,91 +482,6 @@ export const DATA = {
       videoLabel: "blakebill file upload demo",
       videoDescription:
         "The blakebill file-sharing homepage shows an illustrated background and an upload card with a drag-and-drop area and a browse button. The view zooms in as the browse button is clicked, a system file picker opens, and several files are selected and opened. The upload card then lists the files with progress bars, alongside an email option, a payment checkout dropdown and a send button.",
-    },
-    {
-      title: "Thatch",
-      href: "",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Point-of-sale UI and back-office workflows for a retail startup.",
-      label: "Internal tool - walkthrough available on request",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Screen",
-          href: "Screen",
-          icon: <Icons.framermotion className="size-3" />,
-        },
-      ],
-      image: "",
-      images: [
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/Add Product - Retailer View - Populated.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Dashboard - 1.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Inventory Allocation 03 - 2.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Thatchat - 2.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/History Detailed View Fullscreen.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/History.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/1_Login Screen.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/2_Checkout Screen - Populated.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/4_Sale Page Receipt.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/5_Receive IA.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/6_Work Orders - Populated – 1.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/7_Inventory Allocated Detailed VIEW - Purchase Order – 2.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/Inventory Allocated Detailed VIEW - Purchase Order-Shipped - Confirm Payment.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/Split Pay.jpg",
-      ],
-      imageAlts: [
-        "Product editor with general info, image upload and specs beside pricing, a variants table and collapsible settings.",
-        "Thatch sales dashboard with KPI cards, a goal tracker, trend chart, inventory rings, a donut chart and orders table.",
-        "Split-screen inventory allocation tool: retailer stock tables with a sort menu beside an editable new allocation order.",
-        "Messaging workspace with channel lists, a chat thread and composer, beside a retailer's product sales tables.",
-        "Inventory allocation detail with vendor info, order totals, shipping fields and notes beside itemized product tables.",
-        "Allocation history list with status filter tabs, a search field and a sortable table of orders and their statuses.",
-      ],
-      video: "",
-    },
-    {
-      title: "Orizon Energy",
-      href: "https://orizonenergy.ca",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Site design and build for a solar company in Western Canada.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://orizonenergy.ca",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      images: [],
-      video: "/Portfolio Links/OrizonEnergy.mp4",
-      videoLabel: "Orizon Energy website walkthrough",
-      videoDescription:
-        "The Orizon Energy website opens on a dark loading screen with the logo and a tagline, then a diagonal wipe reveals a hero section over aerial footage of a residential neighborhood. The hero has a navigation bar with a quote button, a headline, an intro paragraph and two call-to-action tiles. Scrolling down shows a grid of partner logos, then a section with a headline, supporting text, a button and a vertical checklist of solar benefits.",
     },
     // {
     //   title: "Kept by Safe Home Security",

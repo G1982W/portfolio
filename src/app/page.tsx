@@ -18,7 +18,8 @@ import Markdown from "react-markdown";
 import { useState } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
-const FOUNDER_TITLES = ["AskBlake", "BlakeUI", "blakebill"];
+const FOUNDER_TITLES = ["AskBlake", "blakebill", "BlakeUI"];
+const CLIENT_TITLES = ["Costco", "Intermountain Health", "Smyl Fitness", "Carbon HRM"];
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState<readonly string[]>([]);
@@ -166,18 +167,16 @@ export default function Page() {
                   My Projects
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
+                  Selected work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                  Enterprise and health-tech product design, from order management to clinical scheduling.
                 </p>
               </div>
             </div>
           </BlurFade>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.filter((p) => !FOUNDER_TITLES.includes(p.title)).map((project, id) => (
+            {CLIENT_TITLES.map((t) => DATA.projects.find((p) => p.title === t)!).map((project, id) => (
               <BlurFade
                 key={project.title}
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
