@@ -191,14 +191,6 @@ export function ImageSlideshow({
           ))}
         </div>
 
-        {/* Image counter */}
-        <div
-          aria-hidden="true"
-          className="absolute top-2 right-2 bg-black/55 text-white text-xs px-2 py-1 rounded"
-        >
-          {currentIndex + 1} / {images.length}
-        </div>
-
         <span className="sr-only" aria-live="polite" aria-atomic="true">
           {announcement}
         </span>

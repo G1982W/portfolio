@@ -8,10 +8,12 @@ import {
   MotionPreferenceProvider,
   PauseMotionSwitch,
 } from "@/components/motion-preference";
+import { CaseStudyModal } from "@/components/case-study-modal";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { SkipLink } from "@/components/skip-link";
 import { Modal } from "@/components/ui/modal";
+import { CASE_STUDIES, type CaseStudy } from "@/data/case-studies";
 import { DATA } from "@/data/resume";
 import { noOrphan } from "@/lib/utils";
 import Link from "next/link";
@@ -24,6 +26,8 @@ const CLIENT_TITLES = ["Costco", "Intermountain Health", "Smyl Fitness", "Carbon
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // Only one work entry is open at a time; the most recent starts open.
+  const [caseStudy, setCaseStudy] = useState<CaseStudy | null>(null);
+  const [caseStudyTrigger, setCaseStudyTrigger] = useState<HTMLElement | null>(null);
   const [openWork, setOpenWork] = useState<number | null>(0);
   const [modalImages, setModalImages] = useState<readonly string[]>([]);
   const [modalTitle, setModalTitle] = useState("");
@@ -184,6 +188,7 @@ export default function Page() {
               <BlurFade
                 key={project.title}
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                className="h-full"
               >
                 <ProjectCard
                   // href={project.href || undefined}
@@ -202,7 +207,23 @@ export default function Page() {
                       : undefined
                   }
                   links={project.links || undefined}
-                  label={"label" in project ? project.label : undefined}
+                  label={
+                    CASE_STUDIES[project.title]
+                      ? undefined
+                      : "label" in project
+                        ? project.label
+                        : undefined
+                  }
+                  onCaseStudyClick={
+                    CASE_STUDIES[project.title]
+                      ? (trigger, viaKeyboard) => {
+                          // Return focus to the button only for keyboard users;
+                          // after a mouse click, closing leaves no focus ring.
+                          setCaseStudyTrigger(viaKeyboard ? trigger : null);
+                          setCaseStudy(CASE_STUDIES[project.title]);
+                        }
+                      : undefined
+                  }
                   onScreenClick={handleScreenClick}
                 />
               </BlurFade>
@@ -224,6 +245,7 @@ export default function Page() {
               <BlurFade
                 key={project.title}
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                className="h-full"
               >
                 <ProjectCard
                   // href={project.href || undefined}
@@ -330,6 +352,11 @@ export default function Page() {
         alts={modalAlts}
         title={modalTitle}
         returnFocusTo={modalTrigger}
+      />
+      <CaseStudyModal
+        study={caseStudy}
+        onClose={() => setCaseStudy(null)}
+        returnFocusTo={caseStudyTrigger}
       />
     </main>
     </MotionPreferenceProvider>
