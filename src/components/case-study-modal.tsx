@@ -11,7 +11,8 @@ import { noOrphan } from "@/lib/utils";
 interface CaseStudyModalProps {
   study: CaseStudy | null;
   onClose: () => void;
-  /** Element to return focus to when the modal closes. */
+  /** Element to return focus to when the modal closes (keyboard users).
+   *  When null, focus is cleared on close so no focus ring lingers. */
   returnFocusTo?: HTMLElement | null;
 }
 
@@ -80,8 +81,7 @@ export function CaseStudyModal({
   // Focus the close button, make the page behind inert, restore focus on close.
   useEffect(() => {
     if (!isOpen || !mounted) return;
-    const returnTo =
-      returnFocusTo ?? (document.activeElement as HTMLElement | null);
+    const returnTo = returnFocusTo ?? null;
     const root = rootRef.current;
     const inerted: Element[] = [];
     Array.from(document.body.children).forEach((child) => {
@@ -98,6 +98,8 @@ export function CaseStudyModal({
       inerted.forEach((el) => el.removeAttribute("inert"));
       if (returnTo && document.contains(returnTo)) {
         returnTo.focus({ preventScroll: true });
+      } else {
+        (document.activeElement as HTMLElement | null)?.blur();
       }
     };
   }, [isOpen, mounted, returnFocusTo]);
@@ -142,7 +144,7 @@ export function CaseStudyModal({
                 ref={closeRef}
                 onClick={onClose}
                 aria-label="Close case study"
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#818CF8] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
               </button>

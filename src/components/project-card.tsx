@@ -43,7 +43,7 @@ interface Props {
   label?: string;
   className?: string;
   /** Opens this project's case study; shows a "Read case study" button. */
-  onCaseStudyClick?: (trigger: HTMLElement) => void;
+  onCaseStudyClick?: (trigger: HTMLElement, viaKeyboard: boolean) => void;
   onScreenClick?: (
     images: readonly string[],
     title: string,
@@ -53,7 +53,7 @@ interface Props {
 }
 
 const ACTION_CLASSES =
-  "flex w-full items-center justify-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold text-white shadow-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "flex w-full items-center justify-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold text-white shadow-sm transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#818CF8] focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export function ProjectCard({
   title,
@@ -89,7 +89,11 @@ export function ProjectCard({
     const target = e.target as HTMLElement;
     if (target.closest("button, a")) return;
     if (window.getSelection()?.toString()) return;
-    actionRef.current?.click();
+    if (onCaseStudyClick && actionRef.current) {
+      onCaseStudyClick(actionRef.current, false);
+    } else {
+      actionRef.current?.click();
+    }
   };
 
   // Playback follows the site-wide "Pause motion" switch (WCAG 2.2.2).
@@ -153,14 +157,14 @@ export function ProjectCard({
           )
         )}
       </div>
-      <CardHeader className="px-2">
-        <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
+      <CardHeader className="px-4 pt-4">
+        <div className="space-y-2">
+          <CardTitle className="text-base">{title}</CardTitle>
           {/* <time className="font-sans text-xs">{dates}</time> */}
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <Markdown className="prose max-w-full font-sans text-xs text-muted-foreground dark:prose-invert">
+          <Markdown className="prose max-w-full font-sans text-xs leading-relaxed text-muted-foreground dark:prose-invert">
             {description}
           </Markdown>
         </div>
@@ -180,12 +184,12 @@ export function ProjectCard({
           </div>
         )}
       </CardContent> */}
-      <CardFooter className="mt-auto px-2 pb-2">
+      <CardFooter className="mt-auto px-4 pb-4 pt-5">
         {onCaseStudyClick ? (
           <button
             ref={actionRef as React.RefObject<HTMLButtonElement>}
             type="button"
-            onClick={(e) => onCaseStudyClick(e.currentTarget)}
+            onClick={(e) => onCaseStudyClick(e.currentTarget, e.detail === 0)}
             aria-label={`Read the ${title} case study`}
             className={cn(ACTION_CLASSES, "bg-[#4F46E5] hover:bg-[#4338CA] group-hover/card:bg-[#4338CA]")}
           >

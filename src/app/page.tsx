@@ -216,8 +216,10 @@ export default function Page() {
                   }
                   onCaseStudyClick={
                     CASE_STUDIES[project.title]
-                      ? (trigger) => {
-                          setCaseStudyTrigger(trigger);
+                      ? (trigger, viaKeyboard) => {
+                          // Return focus to the button only for keyboard users;
+                          // after a mouse click, closing leaves no focus ring.
+                          setCaseStudyTrigger(viaKeyboard ? trigger : null);
                           setCaseStudy(CASE_STUDIES[project.title]);
                         }
                       : undefined
