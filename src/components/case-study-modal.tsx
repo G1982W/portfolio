@@ -117,7 +117,7 @@ export function CaseStudyModal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="motion-reveal absolute inset-0 bg-background/70 backdrop-blur-xl"
+            className="motion-reveal absolute inset-0 bg-[#30313D]/35"
             onClick={onClose}
             aria-hidden="true"
           />
