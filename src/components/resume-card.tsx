@@ -3,7 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { cn, noOrphan } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -20,6 +20,9 @@ interface ResumeCardProps {
   period: string;
   description?: string;
   defaultExpanded?: boolean;
+  /** Controlled open state; pass with onExpandedChange to manage it from the parent. */
+  expanded?: boolean;
+  onExpandedChange?: (expanded: boolean) => void;
 }
 export const ResumeCard = ({
   logoUrl,
@@ -31,8 +34,14 @@ export const ResumeCard = ({
   period,
   description,
   defaultExpanded = false,
+  expanded,
+  onExpandedChange,
 }: ResumeCardProps) => {
-  const [isExpanded, setIsExpanded] = React.useState(defaultExpanded);
+  const [internalExpanded, setInternalExpanded] =
+    React.useState(defaultExpanded);
+  const isExpanded = expanded ?? internalExpanded;
+  const setIsExpanded = (next: boolean) =>
+    onExpandedChange ? onExpandedChange(next) : setInternalExpanded(next);
   const descriptionId = React.useId();
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -131,8 +140,8 @@ export const ResumeCard = ({
             }}
             className="motion-collapse mt-2"
           >
-            <Markdown className="prose max-w-full text-pretty font-sans text-xs sm:text-sm text-muted-foreground dark:prose-invert">
-              {description}
+            <Markdown className="prose max-w-full font-sans text-xs sm:text-sm text-muted-foreground dark:prose-invert">
+              {noOrphan(description)}
             </Markdown>
           </motion.div>
         )}

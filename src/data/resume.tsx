@@ -9,7 +9,7 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/Salt+Lake+City,+UT",
   description:
     "Principal Product Designer with 16+ years turning high-complexity enterprise SaaS, health tech, and fintech systems into fast, intuitive, accessible products.",
-  summary: `16+ years turning data-dense, high-complexity systems into interfaces people can move through fast. I own products end to end, set the design systems and standards other designers build on, and have mentored 8 designers across enterprise and health-tech teams. I also ship a production React component library and AI tooling, which keeps my design decisions grounded in what engineering can actually build. Recent clients include Costco, Intermountain Health, and the State of Washington.`,
+  summary: `16+ years turning data-dense, high-complexity systems into interfaces people can move through fast. I own products end to end, from user research and prototyping through developer specs, partner directly with product managers, and set the design systems other designers build on, having mentored 8 designers. I am hands-on in Figma and code, prototype with AI tools like Claude and Gemini, and build WCAG 2.2 AA accessibility in from the start. I also ship a production React component library, which keeps my design decisions grounded in what engineering can actually build. Recent clients include Costco, Intermountain Health, and the State of Washington.`,
   avatarUrl: "/me.png",
   metaDescription:
     "Principal Product Designer with 16+ years across enterprise SaaS, health tech, and fintech. Design systems, data-dense dashboards, and products built to scale.",
@@ -24,6 +24,8 @@ export const DATA = {
       label: "Design & Prototyping",
       items: [
         "Figma (components, variables, auto-layout, prototyping)",
+        "wireframing",
+        "interactive prototyping",
         "FigJam",
         "Miro",
         "Adobe Creative Cloud",
@@ -42,6 +44,28 @@ export const DATA = {
       ],
     },
     {
+      label: "Research & Analytics",
+      items: [
+        "User interviews",
+        "usability testing",
+        "A/B testing",
+        "Mixpanel",
+        "Hotjar",
+        "Google Analytics",
+      ],
+    },
+    {
+      label: "AI-Assisted Design",
+      items: [
+        "Claude",
+        "Gemini",
+        "Cursor",
+        "LLM-assisted prototyping and code generation",
+        "retrieval-augmented generation",
+        "context engineering",
+      ],
+    },
+    {
       label: "Front-End",
       items: [
         "React",
@@ -52,27 +76,6 @@ export const DATA = {
         "HTML5",
         "CSS3",
         "Git",
-      ],
-    },
-    {
-      label: "AI-Assisted Design",
-      items: [
-        "Claude",
-        "Cursor",
-        "LLM-assisted prototyping and code generation",
-        "retrieval-augmented generation",
-        "context engineering",
-      ],
-    },
-    {
-      label: "Research & Analytics",
-      items: [
-        "User interviews",
-        "usability testing",
-        "A/B testing",
-        "Mixpanel",
-        "Hotjar",
-        "Google Analytics",
       ],
     },
     {
@@ -121,7 +124,7 @@ export const DATA = {
   },
 
   workNote:
-    "Concurrent remote contract engagements through my independent practice, Aug 2020 - Present. The date ranges below run in parallel, not in sequence. Senior UX/UI Designer 2020-2023, Principal since 2023.",
+    "Remote 1099 contract engagements, Aug 2020 - Present. Date ranges overlap and run in parallel.",
   workEarlier:
     "Earlier: UX/UI and product design for Best Buy, T-Mobile, and agency clients.",
   work: [
@@ -130,45 +133,48 @@ export const DATA = {
       href: "",
       badges: [],
       location: "Seattle, WA",
-      title: "Order Management System",
+      title: "Principal Product Designer | Order Management System",
       logoUrl: "/Logos/Costco.png",
       start: "01/2023",
       end: "Present",
       description: `- Redesigned Costco's internal Order Management System so buyers complete multi-vendor purchasing in one place, removing the manual workarounds they had built to reconcile vendor, item, and order records across separate screens.
 - Led a 5-designer team that rebuilt OMS search, collapsing three separate lookups (item number, order number, vendor) into one cross-domain flyout with wildcard matching, and wrote the developer specs engineering built from.
-- Architected the Figma design system of components, tokens, and documentation that now carries UI patterns across Inventory, Payroll, and HR.`,
+- Architected the Figma design system of components, tokens, and documentation that now carries UI patterns across Inventory, Payroll, and HR.
+- Used Claude and Gemini for fast prototyping and for reasoning through logic across very large databases.`,
     },
     {
       company: "Smyl Fitness",
       href: "",
       badges: [],
       location: "Salt Lake City, UT",
-      title: "Smyl Insight & Minute Moves",
+      title: "Principal Product Designer | Smyl Insight & Minute Moves",
       logoUrl: "/Logos/smylfitness.jpg",
       start: "10/2025",
       end: "07/2026",
       description: `- Designed Smyl Insight, an enterprise clinical CRM now in use at 5+ Chicago-area hospitals, letting clinicians log, track, and review patient fitness assessments in structured, role-based views.
-- Led design for Minute Moves, a mobile fitness app for older adults, taking onboarding and workout flows from wireframe to interactive Figma prototype with accessibility-first interaction patterns.
-- Directed 6 front-end designers on branding, color, and component standards, holding one shared design system across a consumer mobile app and a clinical-grade desktop platform.`,
+- Led design for Minute Moves, a mobile fitness app for older adults, taking onboarding and workout flows from wireframe to interactive Figma prototype with accessibility-first interaction patterns built for older adults.
+- Directed 6 front-end designers on branding, color, and component standards, holding one shared design system across a consumer mobile app and a clinical-grade desktop platform.
+- Used Claude for AI system prototyping, and Claude and Gemini to reason through large datasets across the app and clinical platform.`,
     },
     {
       company: "Intermountain Health",
       badges: [],
       href: "",
       location: "Salt Lake City, UT",
-      title: "Clinical Scheduling & Prescription Portal",
+      title: "Principal Product Designer | Clinical Scheduling & Prescription Portal",
       logoUrl: "/Logos/intermountain health.webp",
       start: "07/2024",
       end: "07/2025",
-      description: `- Led product design for an AI-assisted scheduling and prescription portal, introducing predictive scheduling driven by live patient traffic and historical trends.
-- Consolidated prescriptions, patient history, and medication alerts into one HIPAA-compliant, role-based dashboard built on a reusable component library, working against clinical compliance review and engineering constraints.`,
+      description: `- Led product design for an AI-powered scheduling and prescription portal, introducing predictive scheduling driven by live patient traffic and historical trends.
+- Consolidated prescriptions, patient history, and medication alerts into one HIPAA-compliant, role-based dashboard built on a reusable component library, working against clinical compliance review and engineering constraints.
+- Used Claude to prototype the AI scheduling system, and Claude and Gemini extensively to reason through large datasets and handle different situations.`,
     },
     {
-      company: "Bii Consulting (Senior UX/UI Designer)",
+      company: "Bii Consulting",
       href: "",
       badges: [],
       location: "Salt Lake City, UT",
-      title: "Carbon HRM Payroll Platform",
+      title: "Senior UX/UI Designer | Carbon HRM Payroll Platform",
       logoUrl: "/Logos/bii consulting.jpg",
       start: "06/2024",
       end: "04/2025",
@@ -180,12 +186,11 @@ export const DATA = {
       href: "",
       badges: [],
       location: "Seattle, WA",
-      title: "Veterans Employment App",
+      title: "Senior UX/UI Designer | Veterans Employment App",
       logoUrl: "/Logos/state of washington.svg",
       start: "08/2020",
       end: "01/2023",
-      description: `- Designed a statewide veterans employment app centralizing jobs, training programs, and local resources, reaching 500+ veterans across Washington.
-- Shipped the accessible interface in a three-month sprint for older adults and first-time smartphone users, coordinating legal, accessibility, and engineering review to clear state compliance requirements.`,
+      description: `- Designed an accessible statewide veterans employment app centralizing jobs, training programs, and local resources for 500+ veterans, shipped in a three-month sprint through state legal, accessibility, and engineering review.`,
     },
     // {
     //   company: "Mitre Media",
@@ -207,40 +212,16 @@ export const DATA = {
       degree: "Bachelor of Fine Arts, Graphic Design",
       logoUrl: "/utah.jpeg",
     },
-    {
-      school: "Buildspace",
-      href: "https://buildspace.so",
-      degree: "s3, s4, sf1, s5",
-      logoUrl: "/buildspace.jpg",
-      start: "2023",
-      end: "2024",
-    },
   ],
   projects: [
     {
       title: "Smyl Fitness",
       href: "https://smylfitness.com/",
-      dates: "Feb 2026 - present",
+      dates: "Oct 2025 - Jul 2026",
       active: true,
       description:
         "Minute Moves, a mobile fitness app for older adults, plus Smyl Insight, the clinical CRM now in use at 5+ Chicago-area hospitals.",
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "Supabase",
-        "Stripe",
-        "Shadcn UI",
-        "Radix UI",
-        "Fumadocs",
-        "Framer Motion",
-        "Zustand",
-        "React Hook Form + Zod",
-        "TanStack Table",
-        "Recharts",
-        "Lucide Icons",
-      ],
+      technologies: [],
       links: [
         {
           type: "Website",
@@ -283,22 +264,12 @@ export const DATA = {
     {
       title: "Costco",
       href: "",
-      dates: "April 2023 - March 2024",
+      dates: "Jan 2023 - Present",
       active: true,
       description:
         "Unified item, order, and vendor lookup into one search interface, removing the manual workarounds buyers had built across separate screens.",
       label: "Internal tool - walkthrough available on request",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
+      technologies: [],
       links: [
         {
           type: "Screen",
@@ -328,21 +299,12 @@ export const DATA = {
     {
       title: "Intermountain Health",
       href: "",
-      dates: "June 2023 - Present",
+      dates: "Jul 2024 - Jul 2025",
       active: true,
       description:
-        "AI-assisted scheduling and prescription portal with predictive scheduling driven by live patient traffic and historical trends.",
+        "AI-powered scheduling and prescription portal with predictive scheduling driven by live patient traffic and historical trends.",
       label: "Internal tool - walkthrough available on request",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+      technologies: [],
       links: [
         {
           type: "Screen",
@@ -376,21 +338,11 @@ export const DATA = {
     {
       title: "Carbon HRM",
       href: "https://carbonhrm.com",
-      dates: "April 2023 - March 2024",
+      dates: "Jun 2024 - Apr 2025",
       active: true,
       description:
         "Payroll reporting workflow for a multi-campus organization of 500+ staff.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
+      technologies: [],
       links: [
         {
           type: "Website",
@@ -530,91 +482,6 @@ export const DATA = {
       videoLabel: "blakebill file upload demo",
       videoDescription:
         "The blakebill file-sharing homepage shows an illustrated background and an upload card with a drag-and-drop area and a browse button. The view zooms in as the browse button is clicked, a system file picker opens, and several files are selected and opened. The upload card then lists the files with progress bars, alongside an email option, a payment checkout dropdown and a send button.",
-    },
-    {
-      title: "Thatch",
-      href: "",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Point-of-sale UI and back-office workflows for a retail startup.",
-      label: "Internal tool - walkthrough available on request",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Screen",
-          href: "Screen",
-          icon: <Icons.framermotion className="size-3" />,
-        },
-      ],
-      image: "",
-      images: [
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/Add Product - Retailer View - Populated.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Dashboard - 1.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Inventory Allocation 03 - 2.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/DEMO - Thatchat - 2.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/History Detailed View Fullscreen.jpg",
-        "/Portfolio Links/Screens/Thatch POS/Dashboard/jpg/History.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/1_Login Screen.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/2_Checkout Screen - Populated.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/4_Sale Page Receipt.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/5_Receive IA.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/6_Work Orders - Populated – 1.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/7_Inventory Allocated Detailed VIEW - Purchase Order – 2.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/Inventory Allocated Detailed VIEW - Purchase Order-Shipped - Confirm Payment.jpg",
-        // "/Portfolio Links/Screens/Thatch POS/PoS/jpg/Split Pay.jpg",
-      ],
-      imageAlts: [
-        "Product editor with general info, image upload and specs beside pricing, a variants table and collapsible settings.",
-        "Thatch sales dashboard with KPI cards, a goal tracker, trend chart, inventory rings, a donut chart and orders table.",
-        "Split-screen inventory allocation tool: retailer stock tables with a sort menu beside an editable new allocation order.",
-        "Messaging workspace with channel lists, a chat thread and composer, beside a retailer's product sales tables.",
-        "Inventory allocation detail with vendor info, order totals, shipping fields and notes beside itemized product tables.",
-        "Allocation history list with status filter tabs, a search field and a sortable table of orders and their statuses.",
-      ],
-      video: "",
-    },
-    {
-      title: "Orizon Energy",
-      href: "https://orizonenergy.ca",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Site design and build for a solar company in Western Canada.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://orizonenergy.ca",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      images: [],
-      video: "/Portfolio Links/OrizonEnergy.mp4",
-      videoLabel: "Orizon Energy website walkthrough",
-      videoDescription:
-        "The Orizon Energy website opens on a dark loading screen with the logo and a tagline, then a diagonal wipe reveals a hero section over aerial footage of a residential neighborhood. The hero has a navigation bar with a quote button, a headline, an intro paragraph and two call-to-action tiles. Scrolling down shows a grid of partner logos, then a section with a headline, supporting text, a button and a vertical checklist of solar benefits.",
     },
     // {
     //   title: "Kept by Safe Home Security",
