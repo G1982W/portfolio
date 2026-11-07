@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -51,6 +52,9 @@ interface Props {
   ) => void;
 }
 
+const ACTION_CLASSES =
+  "flex w-full items-center justify-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold text-white shadow-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
 export function ProjectCard({
   title,
   // href,
@@ -73,6 +77,20 @@ export function ProjectCard({
   const { paused: motionPaused, resolved } = useMotionPreference();
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoDescriptionId = useId();
+  const actionRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
+  const websiteLink = links?.find((l) => l.type === "Website");
+  const hasAction = Boolean(onCaseStudyClick || websiteLink);
+
+  // The whole card acts like its main button (case study or website), so a
+  // click anywhere opens it. Clicks on the slideshow's own controls are left
+  // alone. Keyboard users reach the same action through the button itself.
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!hasAction) return;
+    const target = e.target as HTMLElement;
+    if (target.closest("button, a")) return;
+    if (window.getSelection()?.toString()) return;
+    actionRef.current?.click();
+  };
 
   // Playback follows the site-wide "Pause motion" switch (WCAG 2.2.2).
   useEffect(() => {
@@ -87,9 +105,11 @@ export function ProjectCard({
 
   return (
     <Card
-      className={
-        "flex flex-col overflow-hidden border bg-white dark:bg-card hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
+      onClick={handleCardClick}
+      className={cn(
+        "group/card flex flex-col overflow-hidden border bg-white dark:bg-card hover:shadow-lg transition-all duration-300 ease-out h-full",
+        hasAction && "cursor-pointer"
+      )}
     >
       <div className={cn("block cursor-pointer")}>
         {video && (
@@ -161,78 +181,41 @@ export function ProjectCard({
         )}
       </CardContent> */}
       <CardFooter className="mt-auto px-2 pb-2">
-        {((links && links.length > 0) || label || onCaseStudyClick) && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
-            {onCaseStudyClick && (
-              <button
-                type="button"
-                onClick={(e) => onCaseStudyClick(e.currentTarget)}
-                aria-label={`Read the ${title} case study`}
-                className="flex gap-2 rounded-md border border-transparent bg-primary px-2 py-1 text-[10px] font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                Read case study
-              </button>
-            )}
-            {links?.map((link, idx) => {
-              if (link.type === "Screen" && images && images.length > 0) {
-                return (
-                  <button
-                    type="button"
-                    key={idx}
-                    onClick={(e) =>
-                      onScreenClick?.(images, title, e.currentTarget, imageAlts)
-                    }
-                    aria-label={`Screen: view ${title} screenshots`}
-                    className="items-left rounded-md border font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 flex gap-2 px-2 py-1 text-[10px] cursor-pointer"
-                  >
-                    {link.icon}
-                    {link.type}
-                  </button>
-                );
-              }
-
-              if (link.type === "Website") {
-                return (
-                  <Link
-                    href={link?.href}
-                    key={idx}
-                    target="_blank"
-                    aria-label={`${title} website`}
-                    className="rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  >
-                    <Badge
-                      key={idx}
-                      className="flex gap-2 px-2 py-1 text-[10px]"
-                    >
-                      {link.icon}
-                      {link.type}
-                    </Badge>
-                  </Link>
-                );
-              }
-
-              // Handle other link types (like Source, etc.)
-              return (
-                <>
-                  <Link href={link.href} key={idx} target="_blank">
-                    <Badge
-                      key={idx}
-                      className="flex gap-2 px-2 py-1 text-[10px]"
-                    >
-                      {link.icon}
-                      {link.type}
-                    </Badge>
-                  </Link>
-                </>
-              );
-            })}
-            {/* Non-interactive: projects without a public URL get a label, not a link. */}
-            {label && (
-              <span className="self-center font-sans text-[10px] text-muted-foreground">
-                {label}
-              </span>
-            )}
-          </div>
+        {onCaseStudyClick ? (
+          <button
+            ref={actionRef as React.RefObject<HTMLButtonElement>}
+            type="button"
+            onClick={(e) => onCaseStudyClick(e.currentTarget)}
+            aria-label={`Read the ${title} case study`}
+            className={cn(ACTION_CLASSES, "bg-[#4F46E5] hover:bg-[#4338CA] group-hover/card:bg-[#4338CA]")}
+          >
+            Read case study
+            <ArrowRight
+              aria-hidden="true"
+              className="size-3.5 transition-transform duration-200 group-hover/card:translate-x-0.5"
+            />
+          </button>
+        ) : websiteLink ? (
+          <Link
+            ref={actionRef as React.RefObject<HTMLAnchorElement>}
+            href={websiteLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit the ${title} website (opens in a new tab)`}
+            className={cn(ACTION_CLASSES, "bg-[#0F766E] hover:bg-[#115E59] group-hover/card:bg-[#115E59]")}
+          >
+            Visit {websiteLink.href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+            <ArrowUpRight
+              aria-hidden="true"
+              className="size-3.5 transition-transform duration-200 group-hover/card:-translate-y-0.5 group-hover/card:translate-x-0.5"
+            />
+          </Link>
+        ) : (
+          label && (
+            <span className="self-center font-sans text-[10px] text-muted-foreground">
+              {label}
+            </span>
+          )
         )}
       </CardFooter>
     </Card>
