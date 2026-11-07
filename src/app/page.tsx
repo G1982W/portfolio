@@ -13,17 +13,18 @@ import { ResumeCard } from "@/components/resume-card";
 import { SkipLink } from "@/components/skip-link";
 import { Modal } from "@/components/ui/modal";
 import { DATA } from "@/data/resume";
+import { noOrphan } from "@/lib/utils";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { useState } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
-// Joins the last two words with a non-breaking space so a line never ends in a single orphaned word.
-const noOrphan = (text: string) => text.replace(/high-complexity/g, "high\u2011complexity").replace(/\s+(\S+)$/, "\u00A0$1");
 const FOUNDER_TITLES = ["AskBlake", "blakebill", "BlakeUI"];
 const CLIENT_TITLES = ["Costco", "Intermountain Health", "Smyl Fitness", "Carbon HRM"];
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // Only one work entry is open at a time; the most recent starts open.
+  const [openWork, setOpenWork] = useState<number | null>(0);
   const [modalImages, setModalImages] = useState<readonly string[]>([]);
   const [modalTitle, setModalTitle] = useState("");
   const [modalTrigger, setModalTrigger] = useState<HTMLElement | null>(null);
@@ -48,7 +49,7 @@ export default function Page() {
     <main id="main" className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="space-y-4">
+          <div className="space-y-10">
             <div className="gap-2 flex items-start justify-between">
               <BlurFadeText
                 as="h1"
@@ -62,7 +63,7 @@ export default function Page() {
               </BlurFade>
             </div>
             <BlurFadeText
-              className="w-full max-w-none text-pretty md:text-xl"
+              className="w-full max-w-none md:text-xl"
               delay={BLUR_FADE_DELAY}
               text={noOrphan(DATA.description)}
             />
@@ -74,8 +75,8 @@ export default function Page() {
           <h2 className="text-xl font-bold">About</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-            {DATA.summary}
+          <Markdown className="prose max-w-full font-sans text-sm text-muted-foreground dark:prose-invert">
+            {noOrphan(DATA.summary)}
           </Markdown>
         </BlurFade>
       </section>
@@ -85,8 +86,8 @@ export default function Page() {
             <h2 className="text-xl font-bold">Work Experience</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <p className="text-pretty font-sans text-sm text-muted-foreground">
-              {DATA.workNote}
+            <p className="font-sans text-sm text-muted-foreground">
+              {noOrphan(DATA.workNote)}
             </p>
           </BlurFade>
           {DATA.work.map((work, id) => (
@@ -104,13 +105,14 @@ export default function Page() {
                 badges={work.badges}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
-                defaultExpanded={id === 0}
+                expanded={openWork === id}
+                onExpandedChange={(open) => setOpenWork(open ? id : null)}
               />
             </BlurFade>
           ))}
           <BlurFade delay={BLUR_FADE_DELAY * 6 + DATA.work.length * 0.05}>
-            <p className="text-pretty font-sans text-sm text-muted-foreground">
-              {DATA.workEarlier}
+            <p className="font-sans text-sm text-muted-foreground">
+              {noOrphan(DATA.workEarlier)}
             </p>
           </BlurFade>
         </div>
@@ -126,11 +128,11 @@ export default function Page() {
                 key={group.label}
                 delay={BLUR_FADE_DELAY * 10 + id * 0.05}
               >
-                <p className="text-pretty font-sans text-sm text-muted-foreground">
+                <p className="font-sans text-sm text-muted-foreground">
                   <span className="font-semibold text-foreground">
                     {group.label}:
                   </span>{" "}
-                  {group.items.join(", ")}
+                  {noOrphan(group.items.join(", "))}
                 </p>
               </BlurFade>
             ))}
