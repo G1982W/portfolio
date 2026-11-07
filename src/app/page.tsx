@@ -18,6 +18,7 @@ import Markdown from "react-markdown";
 import { useState } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
+const FOUNDER_TITLES = ["AskBlake", "BlakeUI", "blakebill"];
 export default function Page() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImages, setModalImages] = useState<readonly string[]>([]);
@@ -111,29 +112,6 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="education">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Education</h2>
-          </BlurFade>
-          {DATA.education.map((education, id) => (
-            <BlurFade
-              key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-            >
-              <ResumeCard
-                key={education.school}
-                href={education.href}
-                logoUrl={education.logoUrl}
-                altText={education.school}
-                title={education.school}
-                subtitle={education.degree}
-                period={"start" in education ? `${education.start} - ${education.end}` : ""}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -156,6 +134,29 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section id="education">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className="text-xl font-bold">Education</h2>
+          </BlurFade>
+          {DATA.education.map((education, id) => (
+            <BlurFade
+              key={education.school}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            >
+              <ResumeCard
+                key={education.school}
+                href={education.href}
+                logoUrl={education.logoUrl}
+                altText={education.school}
+                title={education.school}
+                subtitle={education.degree}
+                period=""
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -176,7 +177,47 @@ export default function Page() {
             </div>
           </BlurFade>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {DATA.projects.map((project, id) => (
+            {DATA.projects.filter((p) => !FOUNDER_TITLES.includes(p.title)).map((project, id) => (
+              <BlurFade
+                key={project.title}
+                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+              >
+                <ProjectCard
+                  // href={project.href || undefined}
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  dates={project.dates}
+                  tags={project.technologies}
+                  images={project.images}
+                  imageAlts={"imageAlts" in project ? project.imageAlts : undefined}
+                  video={project.video}
+                  videoLabel={"videoLabel" in project ? project.videoLabel : undefined}
+                  videoDescription={
+                    "videoDescription" in project
+                      ? project.videoDescription
+                      : undefined
+                  }
+                  links={project.links || undefined}
+                  label={"label" in project ? project.label : undefined}
+                  onScreenClick={handleScreenClick}
+                />
+              </BlurFade>
+            ))}
+          </div>
+          <BlurFade delay={BLUR_FADE_DELAY * 13}>
+            <div className="mx-auto max-w-[800px] space-y-2 text-center">
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+                Founder Projects
+              </h2>
+              <p className="text-muted-foreground text-sm">
+                Designed, built, and maintained independently. All three are
+                live.
+              </p>
+            </div>
+          </BlurFade>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+            {FOUNDER_TITLES.map((t) => DATA.projects.find((p) => p.title === t)!).map((project, id) => (
               <BlurFade
                 key={project.title}
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
