@@ -41,6 +41,8 @@ interface Props {
     | undefined;
   label?: string;
   className?: string;
+  /** Opens this project's case study; shows a "Read case study" button. */
+  onCaseStudyClick?: (trigger: HTMLElement) => void;
   onScreenClick?: (
     images: readonly string[],
     title: string,
@@ -65,6 +67,7 @@ export function ProjectCard({
   links,
   label,
   className,
+  onCaseStudyClick,
   onScreenClick,
 }: Props) {
   const { paused: motionPaused, resolved } = useMotionPreference();
@@ -158,8 +161,18 @@ export function ProjectCard({
         )}
       </CardContent> */}
       <CardFooter className="px-2 pb-2">
-        {((links && links.length > 0) || label) && (
+        {((links && links.length > 0) || label || onCaseStudyClick) && (
           <div className="flex flex-row flex-wrap items-start gap-1">
+            {onCaseStudyClick && (
+              <button
+                type="button"
+                onClick={(e) => onCaseStudyClick(e.currentTarget)}
+                aria-label={`Read the ${title} case study`}
+                className="flex gap-2 rounded-md border border-transparent bg-primary px-2 py-1 text-[10px] font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                Read case study
+              </button>
+            )}
             {links?.map((link, idx) => {
               if (link.type === "Screen" && images && images.length > 0) {
                 return (
