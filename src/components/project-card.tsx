@@ -160,7 +160,7 @@ export function ProjectCard({
           </div>
         )}
       </CardContent> */}
-      <CardFooter className="px-2 pb-2">
+      <CardFooter className="mt-auto px-2 pb-2">
         {((links && links.length > 0) || label || onCaseStudyClick) && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {onCaseStudyClick && (

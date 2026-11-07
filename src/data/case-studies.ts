@@ -22,6 +22,7 @@ export type CaseStudy = {
 const COSTCO = "/Portfolio Links/Screens/Costco Screens";
 const IH = "/Portfolio Links/Screens/Intermountain Health/jpg";
 const SMYL = "/Portfolio Links/Screens/Smyl Screens";
+const CARBON = "/Portfolio Links/Screens/CarbonHRM";
 
 export const CASE_STUDIES: Record<string, CaseStudy> = {
   Costco: {
@@ -294,6 +295,86 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
         height: 1342,
         caption: "Clinic home with quick actions.",
         alt: "Home dashboard with a clinic details panel and action cards for viewing the population, adding members, and screening.",
+      },
+    ],
+  },
+
+  "Carbon HRM": {
+    eyebrow: "Bii Consulting · Carbon HRM Payroll Platform",
+    headline: "A payroll and finance portal built for churches",
+    summary:
+      "Churches needed their own portal for payroll and finance, and an off-the-shelf HR system did not fit how they pay and manage staff. I designed Carbon HRM, an online dashboard where staff manage their teams and handle payroll and finance in one place.",
+    facts: [
+      { label: "Role", value: "Senior UX/UI Designer" },
+      { label: "Engagement", value: "Via Bii Consulting" },
+      { label: "Timeline", value: "Jun 2024 – Apr 2025" },
+      { label: "Scale", value: "Multi-campus, 500+ staff" },
+    ],
+    sections: [
+      {
+        heading: "The problem",
+        body: "A multi-campus organization of 500+ staff was running payroll reporting by hand across separate systems. Church payroll has its own rules, including giving-based payroll, so they needed a custom CRM rather than a generic HR tool.",
+      },
+      {
+        heading: "My role",
+        body: "I ran user research with church administrators and staff, then designed the dashboard, payroll reporting, and team management workflows.",
+      },
+      {
+        heading: "Key decisions",
+        points: [
+          "One dashboard for every employee. Pay, leave balances, holidays, time-off history, and direct reports sit on a single home screen.",
+          "Managers manage their people. Team calendars, timesheet review, and new hire onboarding let staff manage the employees who report to them.",
+          "Payroll reporting in one place. Multi-campus reporting steps that administrators had been completing by hand across separate systems are consolidated into one workflow.",
+          "Built from research. Interviews with administrators and staff turned into PTO tracking, giving-based payroll automation, and role-based access controls.",
+        ],
+      },
+      {
+        heading: "Outcome",
+        body: "Payroll, finance, and team management for a 500+ staff, multi-campus organization now live in one portal instead of separate systems and manual steps.",
+      },
+    ],
+    screens: [
+      {
+        src: `${CARBON}/1.png`,
+        width: 920,
+        height: 690,
+        caption: "Employee home: pay, leave balances, direct reports, and time off.",
+        alt: "Employee dashboard with a profile card, pay and leave balance tiles, direct reports, holidays, and time-off history.",
+      },
+      {
+        src: `${CARBON}/2.png`,
+        width: 920,
+        height: 690,
+        caption: "Team time-away calendar with color-coded leave types.",
+        alt: "Team time-away calendar in month view with color-coded leave type filters and multi-day absence bars.",
+      },
+      {
+        src: `${CARBON}/4.png`,
+        width: 920,
+        height: 690,
+        caption: "Timesheet review grouped by employee, with bulk actions.",
+        alt: "Timesheet review table grouped by employee with a bulk action toolbar and an expanded row of weekly hours.",
+      },
+      {
+        src: `${CARBON}/3.png`,
+        width: 920,
+        height: 690,
+        caption: "New hire onboarding tracker with checklist steps.",
+        alt: "New hire onboarding tracker table with progress indicators and an expanded row showing checklist steps.",
+      },
+      {
+        src: `${CARBON}/6.png`,
+        width: 1444,
+        height: 1019,
+        caption: "Employee directory with department, location, and manager.",
+        alt: "Employee directory table with a search bar, avatars, contact icons, and department, location, and manager columns.",
+      },
+      {
+        src: `${CARBON}/5.png`,
+        width: 1600,
+        height: 1180,
+        caption: "Alternate dashboard layout explored during design.",
+        alt: "Alternate employee dashboard layout with profile card, pay summary, leave balances, holidays, and time-off history.",
       },
     ],
   },
