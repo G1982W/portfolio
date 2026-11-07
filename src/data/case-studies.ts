@@ -19,7 +19,7 @@ export type CaseStudy = {
   screens: CaseStudyScreen[];
 };
 
-const COSTCO = "/Portfolio Links/Screens/Costco Screens";
+const COSTCO = "/Portfolio Links/Screens/Costco Case Study";
 const IH = "/Portfolio Links/Screens/Intermountain Health/jpg";
 const SMYL = "/Portfolio Links/Screens/Smyl Screens";
 const CARBON = "/Portfolio Links/Screens/CarbonHRM";
@@ -48,8 +48,10 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       {
         heading: "Key decisions",
         points: [
-          "One search for the whole domain. I collapsed three separate lookups (item number, order number, vendor) into one cross-domain flyout with wildcard matching, so buyers no longer need to know which screen a record lives on.",
-          "Advanced search for the hard cases. Catalog and warehouse selectors, removable filter chips, and recent searches let buyers narrow very large result sets without starting over.",
+          "One search for the whole domain. A global search on every page covers orders, customers, POs, and picktickets, with recent searches tagged by type. It replaced three separate lookups (item number, order number, vendor) with wildcard matching, so buyers no longer need to know which screen a record lives on.",
+          "Results grouped by business area. One query returns orders, POs, and picktickets side by side with the match highlighted, plus filters for which field it was found in.",
+          "Advanced search that explains itself. A condition builder handles complex queries and restates them in plain language, so buyers can check what they asked for before running it.",
+          "Tables built for heavy use. Column filters, amount ranges with a distribution, and saved column presets let each team see the data it needs.",
           "A design system that scales past search. Components, tokens, and documentation now carry the same UI patterns across Inventory, Payroll, and HR.",
           "AI in the workflow. I used Claude and Gemini for fast prototyping and to reason through logic across very large databases.",
         ],
@@ -61,46 +63,60 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
     ],
     screens: [
       {
-        src: `${COSTCO}/001.png`,
-        width: 1440,
-        height: 1174,
-        caption: "Item management home with the quick search flyout open.",
-        alt: "Item management dashboard with a feature banner, open quick search menu, metric cards, quick links and recent activity.",
+        src: `${COSTCO}/01-global-search-flyout.png`,
+        width: 2880,
+        height: 1094,
+        caption: "Global search from any page, with recent searches tagged by type.",
+        alt: "Order Management home with the global search flyout open, showing a business area selector and recent searches tagged Order, Customer, Pickticket, and PO, with Advanced Search and View All Results actions.",
       },
       {
-        src: `${COSTCO}/002.png`,
-        width: 1440,
-        height: 1174,
-        caption: "Advanced search with catalog and warehouse scoping and filter chips.",
-        alt: "Advanced search form with catalog and warehouse selectors, removable filter chips, dropdown filters and recent searches.",
+        src: `${COSTCO}/02-search-results-all-areas.png`,
+        width: 2880,
+        height: 2100,
+        caption: "One search, results grouped by business area with the match highlighted.",
+        alt: "Search results for values starting with 1032, grouped into Orders, POs, and Picktickets tables with the matching digits highlighted, plus Found in, Warehouse, and Date filters on the left.",
       },
       {
-        src: `${COSTCO}/003.png`,
-        width: 1440,
-        height: 1174,
-        caption: "Search results with a filter sidebar, export, and status badges.",
-        alt: "Item search results table with a checkbox filter sidebar, export and refine actions, status badges and pagination.",
+        src: `${COSTCO}/03-advanced-search-orders.png`,
+        width: 2892,
+        height: 2124,
+        caption: "Advanced search as a condition builder, summarized in plain language.",
+        alt: "Advanced Search for Orders panel with warehouse, date range, and fulfillment center fields, a list of Where and And conditions, multiple order numbers as chips, and a plain-language summary of the search above Search and Cancel.",
       },
       {
-        src: `${COSTCO}/004.png`,
-        width: 1440,
-        height: 1050,
-        caption: "Carrier and ship code management with nested code tables.",
-        alt: "Carrier and ship code table with one row expanded to a nested code table, plus create, export and pagination controls.",
+        src: `${COSTCO}/04-advanced-search-items.webp`,
+        width: 1080,
+        height: 881,
+        caption: "Item advanced search with department chips and inline guidance.",
+        alt: "Item advanced search form with catalog and warehouse selectors, a description field, removable department chips, vendor and suffix fields, a tips panel, and recently searched values.",
       },
       {
-        src: `${COSTCO}/005.png`,
-        width: 1440,
-        height: 1050,
-        caption: "Editing a carrier, including delivery eligibility.",
-        alt: "Edit carrier form with basic details, tracking site URL fields, a delivery eligibility table and an editable code table.",
+        src: `${COSTCO}/05-order-results-amount-filter.png`,
+        width: 2880,
+        height: 2100,
+        caption: "Column filters on results, including an amount range with a distribution.",
+        alt: "Order search results table with a filter row under the headers and an open Total filter showing amount ranges with counts, a histogram, a range slider, and minimum and maximum fields.",
       },
       {
-        src: `${COSTCO}/006.png`,
-        width: 1440,
-        height: 1050,
-        caption: "Adding a shipping code in a side panel without leaving the form.",
-        alt: "Add shipping code side panel with tabs, code and method fields, option checkboxes and cutoff time over the edit form.",
+        src: `${COSTCO}/06-column-management.png`,
+        width: 2880,
+        height: 2100,
+        caption: "Column presets so each team sees the data it needs.",
+        alt: "Column Management panel over order results with presets like Default, Customer care, and Finance, grouped available fields with checkboxes, and a reorderable list of selected columns.",
+      },
+      {
+        src: `${COSTCO}/07-order-fulfillment-picktickets.png`,
+        width: 2880,
+        height: 2100,
+        caption: "Order detail with POs and picktickets expanded to line items.",
+        alt: "Order detail page on the Fulfillment tab showing purchase orders and picktickets, with one row expanded to line items showing status, quantity, vendor SKU, and expected ship date, and a saved confirmation toast.",
+      },
+      {
+        src: `${COSTCO}/08-shipping-expectation-vendor.png`,
+        width: 2880,
+        height: 2108,
+        caption: "Shipping expectations set per vendor without leaving the list.",
+        alt: "Shipping Item Expectation list filtered by vendor with a Vendor Master side panel open, showing vendor details and shipping expectation fields for time frame and cut-off time.",
       },
     ],
   },
